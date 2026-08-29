@@ -1,0 +1,1359 @@
+/* =========================================================
+   PROCESS SECTION
+========================================================= */
+
+.process {
+  position: relative;
+
+  width: 100%;
+
+  background: #000000;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  padding:
+    clamp(90px, 10vh, 130px)
+    0
+    clamp(90px, 10vh, 125px);
+
+  isolation: isolate;
+}
+
+
+.process::before {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width:
+    min(900px, 70vw);
+
+  height:
+    100%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.025),
+      transparent 65%
+    );
+
+  content: "";
+
+  pointer-events:
+    none;
+
+  z-index:
+    -1;
+}
+
+
+.process__container {
+  position: relative;
+
+  width:
+    min(92vw, 1450px);
+
+  margin:
+    0 auto;
+}
+
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.process__intro {
+  position: relative;
+
+  display: flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  width:
+    min(900px, 92vw);
+
+  margin:
+    0 auto
+    clamp(40px, 6vh, 75px);
+
+  text-align:
+    center;
+}
+
+
+.process__eyebrow {
+  margin-bottom:
+    20px;
+
+  font-size:
+    10px;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.36em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    rgba(255,255,255,0.38);
+}
+
+
+.process__heading {
+  display: flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  margin:
+    0;
+
+  font-size:
+    clamp(58px, 7vw, 118px);
+
+  font-weight:
+    700;
+
+  line-height:
+    0.86;
+
+  letter-spacing:
+    -0.055em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    #ffffff;
+}
+
+
+.process__heading-mask {
+  display:
+    block;
+
+  overflow:
+    hidden;
+
+  padding:
+    0.04em 0;
+}
+
+
+.process__heading-line {
+  display:
+    block;
+
+  will-change:
+    transform;
+}
+
+
+.process__sub {
+  width:
+    min(650px, 90vw);
+
+  margin:
+    28px auto 0;
+
+  font-size:
+    clamp(14px, 1vw, 17px);
+
+  line-height:
+    1.7;
+
+  letter-spacing:
+    -0.01em;
+
+  color:
+    rgba(255,255,255,0.48);
+}
+
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.process__timeline {
+  position:
+    relative;
+
+  width:
+    100%;
+}
+
+
+.process__steps {
+  position:
+    relative;
+
+  z-index:
+    3;
+}
+
+
+
+/* =========================================================
+   CENTER LINE
+
+   Height is calculated by JS so that it stops exactly
+   at the Phase 06 node.
+========================================================= */
+
+.process__line-base,
+.process__line-progress {
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    50%;
+
+  width:
+    1px;
+
+  height:
+    0;
+
+  pointer-events:
+    none;
+}
+
+
+.process__line-base {
+  z-index:
+    1;
+
+  background:
+    rgba(255,255,255,0.11);
+
+  transform:
+    translateX(-50%);
+}
+
+
+.process__line-progress {
+  z-index:
+    2;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.12) 0%,
+      rgba(255,255,255,0.45) 30%,
+      rgba(255,255,255,0.82) 70%,
+      #ffffff 100%
+    );
+
+  transform:
+    translateX(-50%)
+    scaleY(0);
+
+  transform-origin:
+    top center;
+
+  box-shadow:
+    0 0 6px
+    rgba(255,255,255,0.2);
+
+  will-change:
+    transform;
+}
+
+
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.process__step {
+  position:
+    relative;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    110px
+    minmax(0, 1fr);
+
+  align-items:
+    center;
+
+  width:
+    100%;
+
+  min-height:
+    clamp(360px, 48vh, 480px);
+}
+
+
+
+/* =========================================================
+   PHASE 01 / 03 / 05
+   TEXT LEFT — IMAGE RIGHT
+========================================================= */
+
+.process__step--left
+.process__content {
+  grid-column:
+    1;
+
+  grid-row:
+    1;
+
+  justify-self:
+    end;
+
+  align-self:
+    center;
+
+  width:
+    min(100%, 500px);
+
+  margin:
+    0;
+
+  text-align:
+    right;
+}
+
+
+.process__step--left
+.process__visual {
+  grid-column:
+    3;
+
+  grid-row:
+    1;
+
+  justify-self:
+    start;
+
+  align-self:
+    center;
+
+  margin:
+    0;
+}
+
+
+
+/* =========================================================
+   PHASE 02 / 04 / 06
+   IMAGE LEFT — TEXT RIGHT
+
+   IMPORTANT:
+   Both are in row 1 + align-self:center.
+   This keeps Research / Develop / Scale perfectly centered.
+========================================================= */
+
+.process__step--right
+.process__visual {
+  grid-column:
+    1;
+
+  grid-row:
+    1;
+
+  justify-self:
+    end;
+
+  align-self:
+    center;
+
+  margin:
+    0;
+}
+
+
+.process__step--right
+.process__content {
+  grid-column:
+    3;
+
+  grid-row:
+    1;
+
+  justify-self:
+    start;
+
+  align-self:
+    center;
+
+  width:
+    min(100%, 500px);
+
+  margin:
+    0;
+
+  text-align:
+    left;
+}
+
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.process__content {
+  position:
+    relative;
+
+  width:
+    min(100%, 500px);
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+
+/* =========================================================
+   PHASE LABEL
+========================================================= */
+
+.process__phase-label {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    23px;
+
+  padding:
+    5px 11px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(255,255,255,0.015);
+
+  backdrop-filter:
+    blur(8px);
+
+  font-size:
+    8px;
+
+  font-weight:
+    500;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.27em;
+
+  text-transform:
+    uppercase;
+
+  white-space:
+    nowrap;
+
+  color:
+    rgba(255,255,255,0.38);
+}
+
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.process__title {
+  margin:
+    clamp(15px,1.5vw,21px)
+    0
+    0;
+
+  padding:
+    0;
+
+  overflow:
+    hidden;
+}
+
+
+.process__title-mask {
+  display:
+    block;
+
+  overflow:
+    hidden;
+
+  padding-bottom:
+    0.08em;
+}
+
+
+.process__title-text {
+  display:
+    inline-block;
+
+  font-size:
+    clamp(42px, 4.2vw, 70px);
+
+  font-weight:
+    700;
+
+  line-height:
+    0.9;
+
+  letter-spacing:
+    -0.05em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    #ffffff;
+
+  will-change:
+    transform;
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.process__desc {
+  width:
+    min(100%, 470px);
+
+  margin:
+    clamp(17px,1.5vw,23px)
+    0
+    0;
+
+  font-size:
+    clamp(14px, 1vw, 16px);
+
+  line-height:
+    1.7;
+
+  letter-spacing:
+    -0.012em;
+
+  color:
+    rgba(255,255,255,0.48);
+}
+
+
+.process__step--left
+.process__desc {
+  margin-left:
+    auto;
+
+  margin-right:
+    0;
+}
+
+
+.process__step--right
+.process__desc {
+  margin-left:
+    0;
+
+  margin-right:
+    auto;
+}
+
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.process__visual {
+  position:
+    relative;
+
+  width:
+    min(100%, 300px);
+
+  max-width:
+    300px;
+
+  margin:
+    0;
+
+  opacity:
+    0;
+
+  visibility:
+    hidden;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+
+.process__visual-frame {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    1.5 / 1;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  border-radius:
+    18px;
+
+  background:
+    #080808;
+
+  box-shadow:
+    0 18px 55px
+    rgba(0,0,0,0.42);
+}
+
+
+.process__visual-frame::after {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    3;
+
+  border-radius:
+    inherit;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(255,255,255,0.025);
+
+  content:
+    "";
+
+  pointer-events:
+    none;
+}
+
+
+.process__visual-image {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  filter:
+    grayscale(1)
+    contrast(1.04)
+    brightness(0.8);
+
+  will-change:
+    transform;
+}
+
+
+.process__visual-shade {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    2;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.1),
+      rgba(0,0,0,0.42)
+    );
+
+  pointer-events:
+    none;
+}
+
+
+.process__visual-index {
+  position:
+    absolute;
+
+  right:
+    14px;
+
+  bottom:
+    11px;
+
+  z-index:
+    4;
+
+  font-size:
+    8px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.25em;
+
+  color:
+    rgba(255,255,255,0.4);
+}
+
+
+.process__step--right
+.process__visual-index {
+  right:
+    auto;
+
+  left:
+    14px;
+}
+
+
+
+/* =========================================================
+   TIMELINE NODE
+========================================================= */
+
+.process__node-wrap {
+  position:
+    absolute;
+
+  top:
+    50%;
+
+  left:
+    50%;
+
+  z-index:
+    10;
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events:
+    none;
+}
+
+
+.process__node {
+  position:
+    relative;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    11px;
+
+  height:
+    11px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.34);
+
+  border-radius:
+    50%;
+
+  background:
+    #000000;
+
+  transform:
+    scale(0.82);
+
+  transition:
+    transform
+    0.35s
+    cubic-bezier(.2,.8,.2,1),
+
+    background-color
+    0.35s ease,
+
+    border-color
+    0.35s ease,
+
+    box-shadow
+    0.4s ease;
+}
+
+
+.process__node-inner {
+  width:
+    3px;
+
+  height:
+    3px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255,255,255,0.45);
+
+  transition:
+    transform
+    0.35s ease,
+
+    background-color
+    0.35s ease;
+}
+
+
+.process__node.is-active {
+  transform:
+    scale(1.05);
+
+  border-color:
+    #ffffff;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 0 0 7px
+    rgba(255,255,255,0.025),
+
+    0 0 0 14px
+    rgba(255,255,255,0.014),
+
+    0 0 28px
+    rgba(255,255,255,0.11);
+}
+
+
+.process__node.is-active
+.process__node-inner {
+  background:
+    #000000;
+
+  transform:
+    scale(0.7);
+}
+
+
+
+/* =========================================================
+   SMALL CONNECTOR
+========================================================= */
+
+.process__step::after {
+  position:
+    absolute;
+
+  top:
+    50%;
+
+  width:
+    30px;
+
+  height:
+    1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.15)
+    );
+
+  content:
+    "";
+
+  pointer-events:
+    none;
+}
+
+
+.process__step--left::after {
+  left:
+    calc(50% - 30px);
+}
+
+
+.process__step--right::after {
+  left:
+    50%;
+
+  transform:
+    scaleX(-1);
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media
+(max-width: 1100px)
+and
+(min-width: 769px) {
+
+  .process__step {
+    grid-template-columns:
+      minmax(0,1fr)
+      80px
+      minmax(0,1fr);
+
+    min-height:
+      370px;
+  }
+
+
+  .process__content,
+  .process__step--left
+  .process__content,
+  .process__step--right
+  .process__content {
+    width:
+      min(100%, 430px);
+  }
+
+
+  .process__visual {
+    width:
+      min(100%, 250px);
+
+    max-width:
+      250px;
+  }
+
+
+  .process__title-text {
+    font-size:
+      clamp(38px,4.6vw,58px);
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .process {
+    padding:
+      70px
+      0
+      75px;
+  }
+
+
+  .process__container {
+    width:
+      min(92vw,620px);
+  }
+
+
+  .process__intro {
+    margin-bottom:
+      42px;
+  }
+
+
+  .process__heading {
+    font-size:
+      clamp(46px,13vw,70px);
+  }
+
+
+  .process__sub {
+    max-width:
+      520px;
+
+    font-size:
+      14px;
+  }
+
+
+  /*
+    LINE MOVES LEFT
+  */
+
+  .process__line-base,
+  .process__line-progress {
+    left:
+      16px;
+  }
+
+
+  .process__steps {
+    padding-left:
+      50px;
+  }
+
+
+  /*
+    MOBILE STEP
+  */
+
+  .process__step {
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    justify-content:
+      center;
+
+    width:
+      100%;
+
+    min-height:
+      375px;
+
+    padding:
+      43px 0;
+  }
+
+
+  /*
+    ALL MOBILE PHASES
+
+    Heading
+    Description
+    Image
+  */
+
+  .process__step--left
+  .process__content,
+
+  .process__step--right
+  .process__content {
+    order:
+      1;
+
+    position:
+      relative;
+
+    width:
+      100%;
+
+    max-width:
+      430px;
+
+    margin:
+      0 !important;
+
+    align-self:
+      flex-start;
+
+    justify-self:
+      auto;
+
+    text-align:
+      left;
+  }
+
+
+  .process__step--left
+  .process__visual,
+
+  .process__step--right
+  .process__visual {
+    order:
+      2;
+
+    width:
+      min(100%, 225px);
+
+    max-width:
+      225px;
+
+    margin:
+      21px 0 0 !important;
+
+    align-self:
+      flex-start;
+
+    justify-self:
+      auto;
+  }
+
+
+  .process__step--left
+  .process__desc,
+
+  .process__step--right
+  .process__desc {
+    margin-left:
+      0;
+
+    margin-right:
+      0;
+  }
+
+
+  .process__title-text {
+    font-size:
+      clamp(36px,10vw,50px);
+  }
+
+
+  .process__desc {
+    width:
+      min(100%,420px);
+
+    font-size:
+      14px;
+
+    line-height:
+      1.65;
+  }
+
+
+  .process__phase-label {
+    font-size:
+      7px;
+
+    padding:
+      5px 9px;
+  }
+
+
+  .process__visual-frame {
+    aspect-ratio:
+      1.5 / 1;
+
+    border-radius:
+      15px;
+  }
+
+
+  /*
+    MOBILE NODE
+  */
+
+  .process__node-wrap {
+    top:
+      50%;
+
+    left:
+      -34px;
+
+    transform:
+      translate(-50%, -50%);
+  }
+
+
+  .process__step::after {
+    top:
+      50%;
+
+    left:
+      -34px !important;
+
+    width:
+      34px;
+
+    transform:
+      none !important;
+  }
+
+
+  .process__visual-index,
+  .process__step--right
+  .process__visual-index {
+    right:
+      12px;
+
+    left:
+      auto;
+
+    bottom:
+      10px;
+  }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .process__container {
+    width:
+      91vw;
+  }
+
+
+  .process__heading {
+    font-size:
+      clamp(42px,13vw,62px);
+  }
+
+
+  .process__steps {
+    padding-left:
+      43px;
+  }
+
+
+  .process__line-base,
+  .process__line-progress {
+    left:
+      12px;
+  }
+
+
+  .process__step {
+    min-height:
+      335px;
+
+    padding:
+      37px 0;
+  }
+
+
+  .process__node-wrap {
+    left:
+      -31px;
+  }
+
+
+  .process__step::after {
+    left:
+      -31px !important;
+
+    width:
+      31px;
+  }
+
+
+  .process__title-text {
+    font-size:
+      clamp(32px,9.5vw,44px);
+  }
+
+
+  .process__desc {
+    font-size:
+      13px;
+  }
+
+
+  .process__visual,
+  .process__step--left
+  .process__visual,
+  .process__step--right
+  .process__visual {
+    width:
+      min(100%,195px);
+
+    max-width:
+      195px;
+
+    margin-top:
+      18px !important;
+  }
+
+
+  .process__visual-frame {
+    border-radius:
+      13px;
+  }
+
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media
+(prefers-reduced-motion: reduce) {
+
+  .process__content,
+  .process__visual,
+  .process__visual-image,
+  .process__title-text,
+  .process__heading-line {
+    opacity:
+      1 !important;
+
+    visibility:
+      visible !important;
+
+    transform:
+      none !important;
+
+    filter:
+      none !important;
+  }
+
+}

@@ -1,0 +1,1444 @@
+/* =========================================================
+   NOVA LAYERS
+   PREMIUM GROWTH HERO
+========================================================= */
+
+.nova-hero {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  color: #ffffff;
+  background: transparent;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.nova-hero__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 1560px);
+  margin: 0 auto;
+  padding:
+    clamp(118px, 12vh, 145px)
+    clamp(22px, 4.5vw, 72px)
+    clamp(82px, 9vh, 110px);
+}
+
+
+/* =========================================================
+   ATMOSPHERIC LIGHT
+========================================================= */
+
+.nova-hero__inner::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 12%;
+  left: 50%;
+  width: min(900px, 70vw);
+  height: 420px;
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,0.032),
+      rgba(255,255,255,0.012) 38%,
+      transparent 72%
+    );
+
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.nova-hero__brand {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  text-align: center;
+
+  opacity: 0;
+
+  clip-path: inset(100% 0% 0% 0%);
+
+  will-change:
+    clip-path,
+    opacity,
+    transform;
+
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.nova-hero__logo {
+  display: block;
+
+  width: clamp(
+    660px,
+    58vw,
+    1220px
+  );
+
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================================
+   GRAPH WRAPPER
+========================================================= */
+
+.nova-hero__graph-wrap {
+  position: relative;
+  z-index: 3;
+
+  width:
+    min(
+      88vw,
+      1280px
+    );
+
+  height:
+    clamp(
+      385px,
+      36vw,
+      505px
+    );
+
+  margin-top:
+    clamp(
+      26px,
+      3.5vh,
+      42px
+    );
+
+  opacity: 0;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================================
+   SVG GRAPH
+========================================================= */
+
+.nova-hero__graph {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 72%;
+
+  overflow: visible;
+
+  display: block;
+}
+
+
+/* =========================================================
+   AREA
+========================================================= */
+
+.nova-hero__graph-area {
+  fill: url(#novaHeroArea);
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   GRAPH LINE
+========================================================= */
+
+.nova-hero__graph-path {
+  fill: none;
+
+  stroke: url(#novaHeroLine);
+
+  stroke-width: 3.2;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
+
+  shape-rendering: geometricPrecision;
+
+  filter:
+    drop-shadow(
+      0 0 5px
+      rgba(255,255,255,0.19)
+    )
+    drop-shadow(
+      0 0 13px
+      rgba(255,255,255,0.065)
+    );
+}
+
+
+/* =========================================================
+   CONNECTOR LINES
+========================================================= */
+
+.nova-hero__connector {
+  stroke:
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+
+  stroke-width: 1;
+
+  stroke-dasharray: 5 8;
+}
+
+
+/* =========================================================
+   MARKERS
+========================================================= */
+
+.nova-hero__marker {
+  fill:
+    rgba(
+      255,
+      255,
+      255,
+      0.92
+    );
+
+  stroke:
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  stroke-width: 8;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(
+        255,
+        255,
+        255,
+        0.18
+      )
+    );
+}
+
+
+/* =========================================================
+   FINAL ENDPOINT
+   FIXED — NEVER MOVES
+========================================================= */
+
+.nova-hero__endpoint {
+  opacity: 1;
+
+  will-change: opacity;
+}
+
+
+/* =========================================================
+   ENDPOINT RING
+========================================================= */
+
+.nova-hero__endpoint-ring-static {
+  fill:
+    rgba(
+      255,
+      255,
+      255,
+      0.018
+    );
+
+  stroke:
+    rgba(
+      255,
+      255,
+      255,
+      0.28
+    );
+
+  stroke-width: 1;
+}
+
+
+/* =========================================================
+   ENDPOINT CORE
+========================================================= */
+
+.nova-hero__endpoint-core {
+  fill: #ffffff;
+
+  stroke:
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    );
+
+  stroke-width: 1.5;
+
+  filter:
+    drop-shadow(
+      0 0 7px
+      rgba(
+        255,
+        255,
+        255,
+        0.95
+      )
+    )
+    drop-shadow(
+      0 0 18px
+      rgba(
+        255,
+        255,
+        255,
+        0.3
+      )
+    );
+}
+
+
+/* =========================================================
+   GROWTH LABEL
+========================================================= */
+
+.nova-hero__growth-label {
+  fill:
+    rgba(
+      255,
+      255,
+      255,
+      0.82
+    );
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      0 0 5px
+      rgba(
+        255,
+        255,
+        255,
+        0.12
+      )
+    );
+}
+
+
+/* =========================================================
+   BURST
+========================================================= */
+
+.nova-hero__burst-ring {
+  fill: none;
+
+  stroke:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  stroke-width: 1;
+
+  transform-box: fill-box;
+  transform-origin: center;
+
+  opacity: 0;
+}
+
+.nova-hero__burst-ring--two {
+  stroke:
+    rgba(
+      255,
+      255,
+      255,
+      0.32
+    );
+}
+
+.nova-hero__burst-rays line {
+  stroke:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  stroke-width: 1;
+
+  stroke-linecap: round;
+
+  transform-box: fill-box;
+  transform-origin: center;
+
+  opacity: 0;
+
+  filter:
+    drop-shadow(
+      0 0 3px
+      rgba(
+        255,
+        255,
+        255,
+        0.36
+      )
+    );
+}
+
+
+/* =========================================================
+   CARDS WRAPPER
+========================================================= */
+
+.nova-hero__cards {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 43%;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.nova-hero__card {
+  position: absolute;
+
+  width:
+    clamp(
+      160px,
+      14.5vw,
+      205px
+    );
+
+  min-height:
+    clamp(
+      126px,
+      10vw,
+      150px
+    );
+
+  padding: 15px 16px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.035),
+      rgba(255,255,255,0.009)
+    );
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  box-shadow:
+    inset
+    0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.045
+    ),
+    0 18px 42px
+    rgba(
+      0,
+      0,
+      0,
+      0.28
+    );
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.34s ease,
+    border-color 0.34s ease,
+    background 0.34s ease;
+}
+
+
+/* =========================================================
+   CARD POSITIONS
+========================================================= */
+
+.nova-hero__card--1 {
+  left: 2%;
+  bottom: 1%;
+}
+
+.nova-hero__card--2 {
+  left: 21%;
+  bottom: 7%;
+}
+
+.nova-hero__card--3 {
+  left: 40.5%;
+  bottom: 11%;
+}
+
+.nova-hero__card--4 {
+  left: 61%;
+  bottom: 8%;
+}
+
+.nova-hero__card--5 {
+  right: 0;
+  bottom: 13%;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.nova-hero__card-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 13px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.nova-hero__card-icon {
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  border-radius: 10px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.88
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.018
+    );
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.nova-hero__card-title-wrap {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.nova-hero__card-number {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.42
+    );
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+}
+
+.nova-hero__card h3 {
+  margin: 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.95
+    );
+
+  font-size:
+    clamp(
+      14px,
+      1.15vw,
+      17px
+    );
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.nova-hero__card p {
+  margin: 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.5
+    );
+
+  font-size:
+    clamp(
+      10px,
+      0.8vw,
+      12px
+    );
+
+  line-height: 1.55;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.nova-hero__card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.29
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.055),
+      rgba(255,255,255,0.014)
+    );
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.nova-hero__actions {
+  position: relative;
+
+  z-index: 6;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top:
+    clamp(
+      28px,
+      3.5vh,
+      46px
+    );
+
+  opacity: 0;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   BUTTON BASE
+========================================================= */
+
+.nova-hero__button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  height: 54px;
+
+  border-radius: 999px;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   PRIMARY
+========================================================= */
+
+.nova-hero__button--primary {
+  min-width: 235px;
+
+  padding:
+    0 5px
+    0 23px;
+
+  color: #080808;
+
+  background: #f3f3f3;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.92
+    );
+
+  box-shadow:
+    0 8px 28px
+    rgba(
+      255,
+      255,
+      255,
+      0.045
+    );
+}
+
+.nova-hero__button-circle {
+  display: grid;
+
+  place-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  background: #080808;
+
+  font-size: 17px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.nova-hero__button--primary:hover {
+  transform: translateY(-3px);
+
+  background: #fff;
+
+  box-shadow:
+    0 12px 34px
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+.nova-hero__button--primary:hover
+.nova-hero__button-circle {
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   SECONDARY
+========================================================= */
+
+.nova-hero__button--secondary {
+  min-width: 175px;
+
+  padding: 0 22px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.008
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+}
+
+.nova-hero__button-arrow {
+  font-size: 15px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.nova-hero__button--secondary:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.42
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+}
+
+.nova-hero__button--secondary:hover
+.nova-hero__button-arrow {
+  transform:
+    translate(
+      2px,
+      -2px
+    );
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .nova-hero__inner {
+    padding-top: 120px;
+    padding-bottom: 90px;
+  }
+
+  .nova-hero__graph-wrap {
+    width: 94vw;
+    height: 450px;
+  }
+
+  .nova-hero__card {
+    width: 155px;
+    min-height: 128px;
+    padding: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .nova-hero__inner {
+    padding:
+      110px
+      18px
+      82px;
+  }
+
+  .nova-hero__logo {
+    width:
+      min(
+        86vw,
+        760px
+      );
+  }
+
+  .nova-hero__graph-wrap {
+    width: 100%;
+    height: 420px;
+    margin-top: 27px;
+  }
+
+  .nova-hero__card {
+    width: 140px;
+    min-height: 120px;
+    border-radius: 15px;
+  }
+
+  .nova-hero__card--1 {
+    left: 1%;
+  }
+
+  .nova-hero__card--2 {
+    left: 20%;
+  }
+
+  .nova-hero__card--3 {
+    left: 39%;
+  }
+
+  .nova-hero__card--4 {
+    left: 59%;
+  }
+
+  .nova-hero__card--5 {
+    right: 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .nova-hero {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .nova-hero__inner {
+    width: 100%;
+
+    padding:
+      90px
+      10px
+      50px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =======================================================
+     LOGO
+  ======================================================= */
+
+  .nova-hero__brand {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .nova-hero__logo {
+    width:
+      min(
+        84vw,
+        390px
+      );
+
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  /* =======================================================
+     GRAPH
+  ======================================================= */
+
+  .nova-hero__graph-wrap {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    height: auto;
+
+    margin-top: 15px;
+
+    overflow: visible;
+  }
+
+  .nova-hero__graph {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    margin-left: 0;
+
+    overflow: visible;
+
+    display: block;
+  }
+
+  .nova-hero__graph-path {
+    stroke-width: 2.6;
+  }
+
+  .nova-hero__connector {
+    stroke-width: 0.8;
+    stroke-dasharray: 4 7;
+  }
+
+  .nova-hero__marker {
+    stroke-width: 6;
+  }
+
+  .nova-hero__endpoint-ring-static {
+    stroke-width: 0.8;
+  }
+
+  .nova-hero__endpoint-core {
+    stroke-width: 1.15;
+  }
+
+
+  /* =======================================================
+     GROWTH LABEL
+  ======================================================= */
+
+  .nova-hero__growth-label {
+    font-size: 8px;
+    letter-spacing: 0.16em;
+  }
+
+
+  /* =======================================================
+     CARDS
+  ======================================================= */
+
+  .nova-hero__cards {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 8px;
+
+    width: 100%;
+
+    height: auto;
+
+    margin-top: 0;
+
+    box-sizing: border-box;
+  }
+
+  .nova-hero__card {
+    position: relative !important;
+
+    inset: auto !important;
+
+    width: 100% !important;
+
+    min-width: 0;
+
+    min-height: 112px;
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+  }
+
+  .nova-hero__card--5 {
+    grid-column: 1 / -1;
+
+    width:
+      calc(
+        50% - 4px
+      ) !important;
+
+    justify-self: center;
+  }
+
+
+  /* =======================================================
+     CARD HEADING
+  ======================================================= */
+
+  .nova-hero__card-heading {
+    gap: 7px;
+    margin-bottom: 8px;
+  }
+
+  .nova-hero__card-icon {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+  }
+
+  .nova-hero__card-title-wrap {
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .nova-hero__card-number {
+    font-size: 7px;
+    letter-spacing: 0.1em;
+  }
+
+  .nova-hero__card h3 {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .nova-hero__card p {
+    font-size: 8.5px;
+    line-height: 1.45;
+  }
+
+
+  /* =======================================================
+     BUTTONS
+     
+     IMPORTANT:
+     MOBILE BUTTONS STAY SIDE BY SIDE.
+  ======================================================= */
+
+  .nova-hero__actions {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+    box-sizing: border-box;
+  }
+
+  .nova-hero__button {
+    flex: 1 1 0;
+
+    width: auto;
+
+    min-width: 0;
+
+    max-width: none;
+
+    height: 45px;
+
+    padding: 0 10px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.09em;
+
+    box-sizing: border-box;
+  }
+
+
+  /* PRIMARY */
+
+  .nova-hero__button--primary {
+    min-width: 0;
+
+    padding:
+      0
+      4px
+      0
+      11px;
+  }
+
+  .nova-hero__button-label {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+
+  .nova-hero__button-circle {
+    width: 35px;
+    height: 35px;
+
+    font-size: 14px;
+  }
+
+
+  /* SECONDARY */
+
+  .nova-hero__button--secondary {
+    min-width: 0;
+
+    padding:
+      0
+      12px;
+  }
+
+  .nova-hero__button-arrow {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .nova-hero__inner {
+    padding:
+      84px
+      8px
+      45px;
+  }
+
+  .nova-hero__logo {
+    width: 78vw;
+  }
+
+  .nova-hero__graph-wrap {
+    margin-top: 11px;
+  }
+
+  .nova-hero__cards {
+    gap: 6px;
+  }
+
+  .nova-hero__card {
+    min-height: 104px;
+
+    padding: 8px;
+
+    border-radius: 10px;
+  }
+
+  .nova-hero__card-icon {
+    width: 27px;
+    height: 27px;
+
+    font-size: 10px;
+  }
+
+  .nova-hero__card-heading {
+    gap: 6px;
+  }
+
+  .nova-hero__card h3 {
+    font-size: 10.5px;
+  }
+
+  .nova-hero__card p {
+    font-size: 7.7px;
+    line-height: 1.4;
+  }
+
+
+  /* BUTTONS REMAIN SIDE BY SIDE */
+
+  .nova-hero__actions {
+    gap: 5px;
+    margin-top: 18px;
+  }
+
+  .nova-hero__button {
+    height: 42px;
+
+    font-size: 6.2px;
+
+    letter-spacing: 0.065em;
+  }
+
+  .nova-hero__button--primary {
+    padding-left: 8px;
+  }
+
+  .nova-hero__button-circle {
+    width: 33px;
+    height: 33px;
+
+    font-size: 13px;
+  }
+
+  .nova-hero__button--secondary {
+    padding:
+      0
+      9px;
+  }
+
+  .nova-hero__button-arrow {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nova-hero__brand,
+  .nova-hero__logo,
+  .nova-hero__graph-wrap,
+  .nova-hero__graph-area,
+  .nova-hero__graph-path,
+  .nova-hero__endpoint,
+  .nova-hero__burst-ring,
+  .nova-hero__burst-rays line,
+  .nova-hero__card,
+  .nova-hero__actions,
+  .nova-hero__button,
+  .nova-hero__button-circle,
+  .nova-hero__button-arrow {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}

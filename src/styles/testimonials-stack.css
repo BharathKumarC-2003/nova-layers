@@ -1,0 +1,18 @@
+.testimonials-stack {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.testimonials-stack .testimonials {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .testimonials-stack .testimonials {
+    top: 0;
+  }
+}

@@ -1,0 +1,109 @@
+.nova-grid-background {
+  --nova-grid-opacity: 0.16;
+  --nova-grid-cell: 84px;
+
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+
+  background: #000000;
+}
+
+.nova-grid-background--low {
+  --nova-grid-opacity: 0.08;
+}
+
+.nova-grid-background--medium {
+  --nova-grid-opacity: 0.13;
+}
+
+.nova-grid-background--high {
+  --nova-grid-opacity: 0.19;
+}
+
+.nova-grid-background__plane {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 170vmax;
+  height: 170vmax;
+
+  transform: translate(-50%, -50%) perspective(1000px) rotateX(62deg) scale(1.08);
+  transform-origin: center center;
+  will-change: transform;
+
+  opacity: var(--nova-grid-opacity);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.72) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.72) 1px, transparent 1px);
+  background-size: var(--nova-grid-cell) var(--nova-grid-cell);
+  background-position: center center;
+
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 16%, rgba(0, 0, 0, 0.9) 42%, transparent 78%);
+  mask-image: radial-gradient(ellipse at center, #000 16%, rgba(0, 0, 0, 0.9) 42%, transparent 78%);
+  animation:
+    nova-grid-depth 22s ease-in-out infinite alternate,
+    nova-grid-drift 24s linear infinite;
+}
+
+.nova-grid-background__vignette {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(ellipse at center, transparent 12%, rgba(0, 0, 0, 0.2) 58%, #000000 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.38), transparent 36%, rgba(0, 0, 0, 0.48));
+}
+
+@keyframes nova-grid-depth {
+  0% {
+    transform: translate(-50%, -50%) perspective(1000px) rotateX(62deg) scale(1.08);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) perspective(1000px) rotateX(62deg) scale(1.18);
+  }
+}
+
+@keyframes nova-grid-drift {
+  from {
+    background-position: center center;
+  }
+
+  to {
+    background-position: calc(50% + var(--nova-grid-cell)) calc(50% + var(--nova-grid-cell));
+  }
+}
+
+@media (max-width: 700px) {
+  .nova-grid-background {
+    --nova-grid-cell: 54px;
+  }
+
+  .nova-grid-background__plane {
+    width: 220vmax;
+    height: 220vmax;
+    transform: translate(-50%, -50%) perspective(760px) rotateX(58deg) scale(1.12);
+  }
+
+  @keyframes nova-grid-depth {
+    0% {
+      transform: translate(-50%, -50%) perspective(760px) rotateX(58deg) scale(1.12);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) perspective(760px) rotateX(58deg) scale(1.2);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nova-grid-background__plane {
+    animation: none;
+  }
+}

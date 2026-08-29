@@ -1,0 +1,1876 @@
+/* =========================================================
+   NOVA STANDARD
+   Premium / Clean / Fully Visible
+   ========================================================= */
+
+.nova-standard {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  padding:
+    clamp(50px, 5vw, 75px)
+    0
+    clamp(70px, 7vw, 105px);
+
+  background:
+    radial-gradient(
+      circle at 50% 56%,
+      rgba(255, 255, 255, .045),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, .018),
+      transparent 55%
+    ),
+    #000;
+
+  color: #fff;
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   PREMIUM GRID BACKGROUND
+========================================================= */
+
+.nova-standard::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 54px 54px;
+
+  opacity: .72;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   CENTRAL AMBIENT LIGHT
+========================================================= */
+
+.nova-standard::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 42%;
+
+  z-index: -2;
+
+  width: 780px;
+  height: 520px;
+
+  max-width: 80vw;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255,255,255,.045),
+      rgba(255,255,255,.012) 40%,
+      transparent 72%
+    );
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.nova-standard__inner {
+  position: relative;
+
+  width:
+    min(
+      1360px,
+      calc(100% - 56px)
+    );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.nova-standard__header {
+  position: relative;
+  z-index: 5;
+
+  text-align: center;
+
+  margin-bottom:
+    clamp(34px, 4vw, 52px);
+}
+
+
+.nova-standard__eyebrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-bottom: 15px;
+
+  color:
+    rgba(255,255,255,.48);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: .32em;
+
+  text-transform: uppercase;
+}
+
+
+.nova-standard__eyebrow::before,
+.nova-standard__eyebrow::after {
+  content: "";
+
+  width: 48px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.35)
+    );
+}
+
+
+.nova-standard__eyebrow::after {
+  transform: scaleX(-1);
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.nova-standard__header h2 {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: .14em;
+
+  margin: 0;
+
+  font-size:
+    clamp(44px, 5vw, 76px);
+
+  font-weight: 700;
+
+  line-height: .93;
+
+  letter-spacing: -.055em;
+
+  text-transform: uppercase;
+}
+
+
+.nova-standard__header h2 span {
+  color:
+    rgba(255,255,255,.96);
+}
+
+
+.nova-standard__header
+.nova-standard__title-accent {
+  color: #777a7e;
+
+  text-shadow:
+    0 0 25px rgba(255,255,255,.05);
+}
+
+
+.nova-standard__header p {
+  max-width: 650px;
+
+  margin:
+    20px auto 0;
+
+  color:
+    rgba(255,255,255,.44);
+
+  font-size: 12px;
+
+  line-height: 1.65;
+
+  letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   SYSTEM
+========================================================= */
+
+.nova-standard__system {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    280px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 34px;
+
+  min-height: 560px;
+}
+
+
+/* =========================================================
+   LARGE ORBIT
+========================================================= */
+
+.nova-standard__orbital-bg {
+  position: absolute;
+
+  z-index: -1;
+
+  left: 50%;
+  top: 50%;
+
+  width: 115%;
+  height: 92%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border:
+    1px solid rgba(255,255,255,.055);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 80px rgba(255,255,255,.015);
+}
+
+
+.nova-standard__orbital-bg::before,
+.nova-standard__orbital-bg::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+}
+
+
+.nova-standard__orbital-bg::before {
+  inset: 8%;
+
+  border:
+    1px solid rgba(255,255,255,.038);
+}
+
+
+.nova-standard__orbital-bg::after {
+  inset: 17%;
+
+  border:
+    1px solid rgba(255,255,255,.028);
+}
+
+
+/* =========================================================
+   COLUMNS
+========================================================= */
+
+.nova-standard__column {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  /*
+   * Important:
+   * Gives the card text enough breathing room.
+   */
+  min-width: 0;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.nova-standard__card {
+  position: relative;
+
+  min-height: 148px;
+
+  display: grid;
+
+  grid-template-columns:
+    105px minmax(0, 1fr);
+
+  gap: 18px;
+
+  align-items: center;
+
+  padding:
+    20px
+    30px
+    20px
+    30px;
+
+  /*
+   * Prevent text from getting clipped.
+   */
+  min-width: 0;
+
+  overflow: visible;
+
+  border:
+    1px solid rgba(255,255,255,.13);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.018) 50%,
+      rgba(255,255,255,.008)
+    ),
+    rgba(5,5,5,.96);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.045),
+    inset 0 -1px 0 rgba(255,255,255,.015),
+    0 20px 45px rgba(0,0,0,.3);
+
+  transition:
+    border-color .35s ease,
+    background .35s ease,
+    box-shadow .35s ease,
+    transform .35s ease;
+}
+
+
+/* =========================================================
+   LEFT CARD SHAPE
+========================================================= */
+
+/*
+ * Reduced side clipping.
+ *
+ * Previously:
+ * 8% / 88%
+ *
+ * That could cut into the first characters of the content.
+ *
+ * This version keeps the premium angled look while giving
+ * the content much more usable space.
+ */
+
+.nova-standard__card--left {
+  clip-path:
+    polygon(
+      3% 0,
+      94% 0,
+      100% 50%,
+      94% 100%,
+      3% 100%,
+      0 50%
+    );
+}
+
+
+/* =========================================================
+   RIGHT CARD SHAPE
+========================================================= */
+
+.nova-standard__card--right {
+  clip-path:
+    polygon(
+      6% 0,
+      97% 0,
+      100% 50%,
+      97% 100%,
+      6% 100%,
+      0 50%
+    );
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.nova-standard__card:hover {
+  border-color:
+    rgba(255,255,255,.28);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.075),
+      rgba(255,255,255,.018)
+    ),
+    rgba(6,6,6,.98);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 25px 60px rgba(0,0,0,.42),
+    0 0 35px rgba(255,255,255,.025);
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================================
+   CARD SHINE
+========================================================= */
+
+.nova-standard__card::marker {
+  display: none;
+}
+
+
+/* =========================================================
+   CONNECTOR LINES
+========================================================= */
+
+.nova-standard__card--left::after,
+.nova-standard__card--right::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 72px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.38),
+      rgba(255,255,255,.08)
+    );
+
+  pointer-events: none;
+}
+
+
+.nova-standard__card--left::after {
+  right: -64px;
+}
+
+
+.nova-standard__card--right::after {
+  left: -64px;
+
+  transform: scaleX(-1);
+}
+
+
+.nova-standard__card--left::before,
+.nova-standard__card--right::before {
+  content: "";
+
+  position: absolute;
+
+  top:
+    calc(50% - 3px);
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 10px rgba(255,255,255,.55);
+}
+
+
+.nova-standard__card--left::before {
+  right: -67px;
+}
+
+
+.nova-standard__card--right::before {
+  left: -67px;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.nova-standard__card-icon {
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  min-width: 0;
+
+  animation:
+    novaIconFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+.nova-standard__card:nth-child(2)
+.nova-standard__card-icon {
+  animation-delay: -.65s;
+}
+
+
+.nova-standard__card:nth-child(3)
+.nova-standard__card-icon {
+  animation-delay: -1.2s;
+}
+
+
+/* =========================================================
+   HEX
+========================================================= */
+
+.nova-standard__hex {
+  position: relative;
+
+  width: 86px;
+  height: 94px;
+
+  display: grid;
+
+  place-items: center;
+
+  clip-path:
+    polygon(
+      25% 0,
+      75% 0,
+      100% 50%,
+      75% 100%,
+      25% 100%,
+      0 50%
+    );
+
+  background:
+    rgba(255,255,255,.16);
+
+  padding: 1px;
+
+  transition:
+    transform .4s ease,
+    filter .4s ease;
+}
+
+
+.nova-standard__hex::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 5px;
+
+  clip-path:
+    polygon(
+      25% 0,
+      75% 0,
+      100% 50%,
+      75% 100%,
+      25% 100%,
+      0 50%
+    );
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  animation:
+    novaHexPulse
+    2.8s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   INNER HEX
+========================================================= */
+
+.nova-standard__hex-inner {
+  position: relative;
+
+  width:
+    calc(100% - 2px);
+
+  height:
+    calc(100% - 2px);
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: hidden;
+
+  clip-path:
+    polygon(
+      25% 0,
+      75% 0,
+      100% 50%,
+      75% 100%,
+      25% 100%,
+      0 50%
+    );
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.07),
+      rgba(255,255,255,.015) 62%,
+      #050505 100%
+    );
+}
+
+
+.nova-standard__hex-inner::before {
+  content: "";
+
+  position: absolute;
+
+  width: 145%;
+  height: 145%;
+
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      rgba(255,255,255,.08) 50deg,
+      transparent 95deg,
+      transparent 240deg,
+      rgba(255,255,255,.055) 300deg,
+      transparent 360deg
+    );
+
+  animation:
+    novaHexRotate
+    8s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   ICON SVG
+========================================================= */
+
+.nova-standard__icon-svg {
+  position: relative;
+
+  z-index: 3;
+
+  width: 48px;
+  height: 48px;
+
+  overflow: visible;
+
+  filter:
+    drop-shadow(
+      0 0 7px rgba(255,255,255,.14)
+    );
+
+  animation:
+    novaIconBreath
+    3s
+    ease-in-out
+    infinite;
+}
+
+
+.ns-icon-faint,
+.ns-icon-main,
+.ns-icon-line,
+.ns-icon-bar,
+.ns-icon-base,
+.ns-icon-arc,
+.ns-icon-diamond,
+.ns-icon-hand {
+  fill: none;
+
+  stroke:
+    rgba(255,255,255,.9);
+
+  stroke-width: 3;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+.ns-icon-faint {
+  stroke:
+    rgba(255,255,255,.18);
+
+  stroke-width: 1.4;
+}
+
+
+.ns-icon-main--dash {
+  stroke-dasharray:
+    7 5;
+
+  transform-origin:
+    50px 50px;
+
+  animation:
+    ns-spin-reverse
+    8s
+    linear
+    infinite;
+}
+
+
+.ns-icon-core {
+  fill: #fff;
+
+  filter:
+    drop-shadow(
+      0 0 7px rgba(255,255,255,.7)
+    );
+
+  animation:
+    ns-pulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+.ns-icon-dot {
+  fill: #fff;
+
+  filter:
+    drop-shadow(
+      0 0 5px rgba(255,255,255,.55)
+    );
+}
+
+
+.ns-icon-dot--pulse {
+  animation:
+    ns-pulse
+    1.7s
+    ease-in-out
+    infinite;
+}
+
+
+.ns-icon-bar {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+
+  animation:
+    ns-bar
+    2.4s
+    ease-in-out
+    infinite;
+}
+
+
+.ns-icon-bar--2 {
+  animation-delay: -.45s;
+}
+
+
+.ns-icon-bar--3 {
+  animation-delay: -.9s;
+}
+
+
+.ns-icon-base {
+  stroke:
+    rgba(255,255,255,.28);
+
+  stroke-width: 1.4;
+}
+
+
+.ns-icon-chart {
+  stroke-dasharray: 110;
+
+  stroke-dashoffset: 110;
+
+  animation:
+    ns-line
+    3s
+    ease-in-out
+    infinite;
+}
+
+
+.ns-icon-arc {
+  transform-origin:
+    50px 50px;
+}
+
+
+.ns-icon-arc--a {
+  animation:
+    ns-spin
+    7s
+    linear
+    infinite;
+}
+
+
+.ns-icon-arc--b {
+  animation:
+    ns-spin-reverse
+    6s
+    linear
+    infinite;
+}
+
+
+.ns-icon-dot--orbit {
+  transform-origin:
+    50px 50px;
+
+  animation:
+    ns-spin
+    3.8s
+    linear
+    infinite;
+}
+
+
+.ns-icon-diamond--outer {
+  animation:
+    ns-float
+    2.8s
+    ease-in-out
+    infinite;
+}
+
+
+.ns-icon-diamond--inner {
+  animation:
+    novaDiamondPulse
+    2.4s
+    ease-in-out
+    infinite;
+}
+
+
+.ns-icon-hand--left {
+  transform-box: fill-box;
+
+  transform-origin: center;
+
+  animation:
+    ns-hand-left
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+.ns-icon-hand--right {
+  transform-box: fill-box;
+
+  transform-origin: center;
+
+  animation:
+    ns-hand-right
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+.ns-icon-handshake {
+  animation:
+    novaHandshakeGlow
+    2.3s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.nova-standard__card-content {
+  position: relative;
+
+  z-index: 3;
+
+  min-width: 0;
+
+  /*
+   * Critical:
+   * Allows content to remain inside the usable card area.
+   */
+  width: 100%;
+
+  max-width: 100%;
+
+  text-align: left;
+
+  padding-right: 6px;
+}
+
+
+.nova-standard__meta {
+  margin-bottom: 7px;
+
+  color:
+    rgba(255,255,255,.7);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: .1em;
+}
+
+
+.nova-standard__card h3 {
+  margin:
+    0 0 8px;
+
+  color: #fff;
+
+  font-size:
+    clamp(14px, 1.1vw, 17px);
+
+  line-height: 1.3;
+
+  font-weight: 650;
+
+  text-transform: uppercase;
+
+  /*
+   * Make sure long titles wrap instead of overflowing.
+   */
+  overflow-wrap: break-word;
+
+  word-break: normal;
+}
+
+
+.nova-standard__card p {
+  width: 100%;
+
+  max-width: 280px;
+
+  margin: 0;
+
+  color:
+    rgba(255,255,255,.48);
+
+  font-size: 11px;
+
+  line-height: 1.55;
+
+  overflow-wrap: break-word;
+
+  word-break: normal;
+}
+
+
+.nova-standard__mini-line {
+  display: block;
+
+  width: 30px;
+  height: 1px;
+
+  margin-top: 10px;
+
+  background:
+    rgba(255,255,255,.65);
+
+  box-shadow:
+    0 0 8px rgba(255,255,255,.18);
+}
+
+
+/* =========================================================
+   CENTRE
+========================================================= */
+
+.nova-standard__centre {
+  position: relative;
+
+  z-index: 4;
+
+  display: grid;
+
+  place-items: center;
+}
+
+
+/* =========================================================
+   CORE
+========================================================= */
+
+.nova-standard__core {
+  position: relative;
+
+  width: 265px;
+  height: 265px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255,255,255,.11);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.035),
+      rgba(255,255,255,.008) 58%,
+      transparent 70%
+    );
+
+  box-shadow:
+    inset 0 0 50px rgba(255,255,255,.02),
+    0 0 55px rgba(0,0,0,.5);
+}
+
+
+.nova-standard__core-ring {
+  position: absolute;
+
+  border-radius: 50%;
+}
+
+
+.nova-standard__core-ring--1 {
+  inset: 16px;
+
+  border:
+    1px solid rgba(255,255,255,.16);
+
+  animation:
+    core-spin
+    16s
+    linear
+    infinite;
+}
+
+
+.nova-standard__core-ring--2 {
+  inset: 34px;
+
+  border:
+    1px dashed rgba(255,255,255,.14);
+
+  animation:
+    core-spin-reverse
+    12s
+    linear
+    infinite;
+}
+
+
+.nova-standard__core-ring--3 {
+  inset: 54px;
+
+  border:
+    1px solid rgba(255,255,255,.24);
+
+  box-shadow:
+    0 0 12px rgba(255,255,255,.04);
+
+  animation:
+    core-spin
+    9s
+    linear
+    infinite;
+}
+
+
+.nova-standard__core-ring--4 {
+  inset: 72px;
+
+  border:
+    1px dashed rgba(255,255,255,.2);
+
+  animation:
+    core-spin-reverse
+    7s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.nova-standard__logo-shell {
+  position: relative;
+
+  z-index: 8;
+
+  width: 92px;
+  height: 92px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255,255,255,.16);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.035),
+      #050505 70%
+    );
+
+  animation:
+    novaLogoPulse
+    3.5s
+    ease-in-out
+    infinite;
+}
+
+
+.nova-standard__logo {
+  position: relative;
+
+  z-index: 10;
+
+  display: block;
+
+  width: 68px;
+
+  height: auto;
+
+  max-width: 68px;
+  max-height: 60px;
+
+  object-fit: contain;
+
+  filter: none;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   CORE DOTS
+========================================================= */
+
+.nova-standard__core-dot {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,.85);
+
+  box-shadow:
+    0 0 8px rgba(255,255,255,.5);
+
+  animation:
+    coreDotPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+.nova-standard__core-dot--1 {
+  top: 25px;
+  left: 50%;
+}
+
+
+.nova-standard__core-dot--2 {
+  right: 25px;
+  top: 50%;
+
+  animation-delay: -.5s;
+}
+
+
+.nova-standard__core-dot--3 {
+  bottom: 25px;
+  left: 50%;
+
+  animation-delay: -1s;
+}
+
+
+.nova-standard__core-dot--4 {
+  left: 25px;
+  top: 50%;
+
+  animation-delay: -1.5s;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes novaIconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+}
+
+
+@keyframes novaHexPulse {
+
+  0%,
+  100% {
+    opacity: .3;
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: .72;
+    transform: scale(1.04);
+  }
+
+}
+
+
+@keyframes novaHexRotate {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes novaIconBreath {
+
+  0%,
+  100% {
+    opacity: .82;
+    transform: scale(.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.035);
+  }
+
+}
+
+
+@keyframes ns-spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes ns-spin-reverse {
+
+  to {
+    transform: rotate(-360deg);
+  }
+
+}
+
+
+@keyframes ns-pulse {
+
+  0%,
+  100% {
+    transform: scale(.85);
+    opacity: .6;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes ns-bar {
+
+  0%,
+  100% {
+    transform: scaleY(.65);
+    opacity: .55;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes ns-line {
+
+  0%,
+  100% {
+    stroke-dashoffset: 110;
+    opacity: .4;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes ns-float {
+
+  0%,
+  100% {
+    transform: translateY(1px);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+}
+
+
+@keyframes novaDiamondPulse {
+
+  0%,
+  100% {
+    opacity: .55;
+
+    filter:
+      drop-shadow(
+        0 0 2px rgba(255,255,255,.1)
+      );
+  }
+
+  50% {
+    opacity: 1;
+
+    filter:
+      drop-shadow(
+        0 0 8px rgba(255,255,255,.35)
+      );
+  }
+
+}
+
+
+@keyframes ns-hand-left {
+
+  0%,
+  100% {
+    transform: translateX(-1px);
+  }
+
+  50% {
+    transform: translateX(2px);
+  }
+
+}
+
+
+@keyframes ns-hand-right {
+
+  0%,
+  100% {
+    transform: translateX(1px);
+  }
+
+  50% {
+    transform: translateX(-2px);
+  }
+
+}
+
+
+@keyframes novaHandshakeGlow {
+
+  0%,
+  100% {
+    opacity: .65;
+  }
+
+  50% {
+    opacity: 1;
+
+    filter:
+      drop-shadow(
+        0 0 6px rgba(255,255,255,.3)
+      );
+  }
+
+}
+
+
+@keyframes core-spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes core-spin-reverse {
+
+  to {
+    transform: rotate(-360deg);
+  }
+
+}
+
+
+@keyframes novaLogoPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    box-shadow:
+      inset 0 0 30px rgba(255,255,255,.03),
+      0 0 25px rgba(255,255,255,.025);
+  }
+
+  50% {
+    transform: scale(1.035);
+
+    box-shadow:
+      inset 0 0 35px rgba(255,255,255,.05),
+      0 0 38px rgba(255,255,255,.07);
+  }
+
+}
+
+
+@keyframes coreDotPulse {
+
+  0%,
+  100% {
+    opacity: .45;
+    transform: scale(.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .nova-standard__system {
+    grid-template-columns:
+      1fr
+      220px
+      1fr;
+
+    gap: 20px;
+  }
+
+
+  .nova-standard__core {
+    width: 210px;
+    height: 210px;
+  }
+
+
+  .nova-standard__card {
+    grid-template-columns:
+      80px 1fr;
+
+    gap: 12px;
+
+    padding:
+      15px
+      24px
+      15px
+      24px;
+  }
+
+
+  .nova-standard__hex {
+    width: 68px;
+    height: 76px;
+  }
+
+
+  .nova-standard__icon-svg {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .nova-standard__card p {
+    max-width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .nova-standard {
+    padding:
+      42px 0 75px;
+  }
+
+
+  .nova-standard::before {
+    background-size: 42px 42px;
+    opacity: .65;
+  }
+
+
+  .nova-standard__inner {
+    width:
+      calc(100% - 28px);
+  }
+
+
+  .nova-standard__header h2 {
+    font-size:
+      clamp(39px, 12vw, 58px);
+  }
+
+
+  .nova-standard__header p {
+    font-size: 10px;
+  }
+
+
+  .nova-standard__system {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+    gap: 18px;
+  }
+
+
+  .nova-standard__centre {
+    order: 1;
+  }
+
+
+  .nova-standard__column--left {
+    order: 2;
+  }
+
+
+  .nova-standard__column--right {
+    order: 3;
+  }
+
+
+  .nova-standard__core {
+    width: 190px;
+    height: 190px;
+
+    margin-bottom: 8px;
+  }
+
+
+  .nova-standard__logo-shell {
+    width: 75px;
+    height: 75px;
+  }
+
+
+  .nova-standard__logo {
+    max-width: 52px;
+    max-height: 36px;
+  }
+
+
+  .nova-standard__column {
+    width: 100%;
+    gap: 12px;
+  }
+
+
+  /* =====================================================
+     MOBILE CARDS
+     ===================================================== */
+
+  .nova-standard__card {
+    width: 100%;
+
+    min-height: 125px;
+
+    grid-template-columns:
+      78px
+      minmax(0, 1fr);
+
+    gap: 14px;
+
+    padding:
+      16px
+      18px;
+
+    /*
+     * Remove clipping on mobile completely.
+     * This guarantees every character is visible.
+     */
+    clip-path: none;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+  }
+
+
+  .nova-standard__card--left::before,
+  .nova-standard__card--left::after,
+  .nova-standard__card--right::before,
+  .nova-standard__card--right::after {
+    display: none;
+  }
+
+
+  .nova-standard__hex {
+    width: 65px;
+    height: 70px;
+  }
+
+
+  .nova-standard__card-content {
+    width: 100%;
+    padding-right: 0;
+  }
+
+
+  .nova-standard__card h3 {
+    font-size: 13px;
+  }
+
+
+  .nova-standard__card p {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .nova-standard__inner {
+    width:
+      calc(100% - 24px);
+  }
+
+
+  .nova-standard__header h2 {
+    font-size:
+      clamp(36px, 12vw, 55px);
+  }
+
+
+  .nova-standard__card {
+    grid-template-columns:
+      68px
+      minmax(0, 1fr);
+
+    gap: 12px;
+
+    padding:
+      14px 14px;
+  }
+
+
+  .nova-standard__hex {
+    width: 58px;
+    height: 64px;
+  }
+
+
+  .nova-standard__icon-svg {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .nova-standard__card h3 {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+
+  .nova-standard__card p {
+    font-size: 9.5px;
+    line-height: 1.55;
+  }
+
+
+  .nova-standard__meta {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .nova-standard__card {
+    grid-template-columns:
+      60px
+      minmax(0, 1fr);
+
+    gap: 10px;
+
+    padding:
+      13px 12px;
+  }
+
+
+  .nova-standard__hex {
+    width: 54px;
+    height: 60px;
+  }
+
+
+  .nova-standard__icon-svg {
+    width: 33px;
+    height: 33px;
+  }
+
+
+  .nova-standard__card h3 {
+    font-size: 11px;
+  }
+
+
+  .nova-standard__card p {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nova-standard *,
+  .nova-standard *::before,
+  .nova-standard *::after {
+    animation: none !important;
+  }
+
+}

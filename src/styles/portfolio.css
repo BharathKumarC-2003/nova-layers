@@ -1,0 +1,2278 @@
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+
+.portfolio {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  padding:
+    clamp(48px, 5vw, 72px)
+    0
+    clamp(58px, 6vw, 90px);
+
+  background: #000;
+  color: #fff;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.portfolio__grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    );
+
+  background-size: 62px 62px;
+
+  opacity: 0.7;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.portfolio__container {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 1280px);
+
+  margin: 0 auto;
+
+  padding:
+    0
+    clamp(18px, 2.8vw, 36px);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.portfolio__header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(260px, 335px);
+
+  align-items: end;
+
+  gap:
+    clamp(
+      30px,
+      5vw,
+      68px
+    );
+
+  margin-bottom:
+    clamp(
+      34px,
+      4vw,
+      52px
+    );
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.portfolio__eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 12px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.47
+    );
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.32em;
+
+  text-transform: uppercase;
+}
+
+
+.portfolio__eyebrow::before {
+  content: "";
+
+  width: 30px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        255,
+        255,
+        255,
+        0.72
+      )
+    );
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.portfolio__heading {
+  display: flex;
+
+  align-items: baseline;
+
+  flex-wrap: wrap;
+
+  column-gap:
+    clamp(
+      12px,
+      1.4vw,
+      21px
+    );
+}
+
+
+.portfolio__heading-mask {
+  overflow: hidden;
+
+  padding-right: 0.08em;
+}
+
+
+.portfolio__heading-word {
+  margin: 0;
+
+  font-size:
+    clamp(
+      64px,
+      7.2vw,
+      108px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.84;
+
+  letter-spacing: -0.07em;
+
+  text-transform: uppercase;
+}
+
+
+.portfolio__heading-word--white {
+  color: #fff;
+}
+
+
+.portfolio__heading-word--grey {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.34
+    );
+}
+
+
+/* =========================================================
+   RIGHT HEADER
+========================================================= */
+
+.portfolio__header-side {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: flex-end;
+
+  max-width: 335px;
+
+  width: 100%;
+}
+
+
+.portfolio__intro {
+  margin: 0;
+
+  max-width: 34ch;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.68
+    );
+
+  font-size:
+    clamp(
+      11px,
+      0.82vw,
+      13px
+    );
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   EXPLORE
+========================================================= */
+
+.portfolio__explore {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+
+.portfolio__explore-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.58
+    );
+
+  font-size: 7px;
+
+  font-weight: 650;
+
+  line-height: 1;
+
+  letter-spacing: 0.17em;
+
+  text-transform: uppercase;
+}
+
+
+.portfolio__explore-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0
+    0
+    9px
+    rgba(
+      255,
+      255,
+      255,
+      0.45
+    );
+}
+
+
+.portfolio__explore-arrow {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.58
+    );
+
+  font-size: 18px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.portfolio__gallery {
+  position: relative;
+
+  padding:
+    8px
+    0
+    4px;
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.portfolio__track {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap:
+    clamp(
+      24px,
+      2.6vw,
+      38px
+    );
+
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  padding:
+    8px
+    18px
+    6px;
+
+  margin:
+    0
+    -18px;
+
+  scrollbar-width: none;
+
+  scroll-behavior: smooth;
+
+  scroll-snap-type:
+    x proximity;
+
+  cursor: grab;
+
+  user-select: none;
+
+  overscroll-behavior-x: contain;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.portfolio__track::-webkit-scrollbar {
+  display: none;
+}
+
+
+.portfolio__track--dragging {
+  cursor: grabbing;
+
+  scroll-behavior: auto;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.portfolio-project {
+  position: relative;
+
+  display: block;
+
+  flex:
+    0 0
+    clamp(
+      230px,
+      22vw,
+      285px
+    );
+
+  width:
+    clamp(
+      230px,
+      22vw,
+      285px
+    );
+
+  color: inherit;
+
+  text-decoration: none;
+
+  scroll-snap-align: center;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   IMAGE BOX
+========================================================= */
+
+.portfolio-project__media {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  border-radius: 17px;
+
+  background: #080808;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.20
+    );
+
+  box-shadow:
+
+    0
+    16px
+    42px
+    rgba(
+      0,
+      0,
+      0,
+      0.50
+    ),
+
+    inset
+    0
+    1px
+    0
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    ),
+
+    inset
+    0
+    0
+    0
+    1px
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  isolation: isolate;
+
+  cursor: pointer;
+
+  transition:
+    transform
+    0.45s
+    cubic-bezier(
+      .16,
+      1,
+      .3,
+      1
+    ),
+
+    border-color
+    0.4s
+    ease,
+
+    box-shadow
+    0.45s
+    ease;
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+   IMPORTANT:
+   CONTAIN = COMPLETE IMAGE VISIBLE
+   NO CROPPING
+========================================================= */
+
+.portfolio-project__image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /*
+    IMPORTANT FIX
+
+    Do NOT use object-fit: cover.
+
+    cover crops parts of the image.
+
+    contain keeps the entire image visible.
+  */
+
+  object-fit: contain;
+
+  object-position: center center;
+
+  background: #080808;
+
+  border-radius: 15px;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  transform: scale(1);
+
+  transition:
+    transform
+    0.6s
+    cubic-bezier(
+      .16,
+      1,
+      .3,
+      1
+    ),
+
+    filter
+    0.5s
+    ease;
+}
+
+
+/* =========================================================
+   PREMIUM IMAGE OVERLAY
+========================================================= */
+
+.portfolio-project__image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.08
+      ),
+      transparent 28%,
+      transparent 58%,
+      rgba(
+        0,
+        0,
+        0,
+        0.32
+      )
+    );
+
+  box-shadow:
+    inset
+    0
+    0
+    45px
+    rgba(
+      0,
+      0,
+      0,
+      0.22
+    ),
+
+    inset
+    0
+    -60px
+    70px
+    rgba(
+      0,
+      0,
+      0,
+      0.16
+    );
+}
+
+
+/* =========================================================
+   INNER BORDER
+========================================================= */
+
+.portfolio-project__media::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 5px;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.075
+    );
+
+  border-radius: 12px;
+
+  box-shadow:
+    inset
+    0
+    0
+    20px
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+
+/* =========================================================
+   PREMIUM CORNER LIGHT
+========================================================= */
+
+.portfolio-project__media::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 45%;
+  height: 45%;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  border-radius:
+    16px
+    0
+    100%
+    0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(
+        255,
+        255,
+        255,
+        0.08
+      ),
+      transparent 65%
+    );
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.portfolio-project:hover
+.portfolio-project__media {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.40
+    );
+
+  box-shadow:
+
+    0
+    25px
+    58px
+    rgba(
+      0,
+      0,
+      0,
+      0.62
+    ),
+
+    0
+    0
+    32px
+    rgba(
+      255,
+      255,
+      255,
+      0.055
+    ),
+
+    inset
+    0
+    1px
+    0
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+}
+
+
+/*
+  Keep image almost completely stable on hover.
+
+  This prevents the screenshot from getting cropped.
+*/
+
+.portfolio-project:hover
+.portfolio-project__image {
+  transform:
+    scale(1.01);
+
+  filter:
+    brightness(1.06)
+    contrast(1.04)
+    saturate(1.04);
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
+
+.portfolio-project__number {
+  position: absolute;
+
+  left: 10px;
+  top: 10px;
+
+  z-index: 8;
+
+  display: grid;
+
+  place-items: center;
+
+  min-width: 24px;
+
+  height: 21px;
+
+  padding:
+    0
+    6px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.18
+    );
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.58
+    );
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.88
+    );
+
+  font-size: 5px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  box-shadow:
+    0
+    6px
+    18px
+    rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
+}
+
+
+/* =========================================================
+   PROJECT FOOTER
+========================================================= */
+
+.portfolio-project__footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding:
+    13px
+    2px
+    0;
+
+  background: transparent;
+
+  border: none;
+}
+
+
+.portfolio-project__label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.34
+    );
+
+  font-size: 4.5px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.portfolio-project__title {
+  margin: 0;
+
+  max-width: 180px;
+
+  color: #fff;
+
+  font-size:
+    clamp(
+      12px,
+      1vw,
+      15px
+    );
+
+  font-weight: 650;
+
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PROJECT ARROW
+========================================================= */
+
+.portfolio-project__arrow {
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  color: #fff;
+
+  font-size: 8px;
+
+  transition:
+    transform
+    0.3s
+    ease,
+
+    background
+    0.3s
+    ease,
+
+    color
+    0.3s
+    ease,
+
+    border-color
+    0.3s
+    ease;
+}
+
+
+.portfolio-project:hover
+.portfolio-project__arrow {
+  transform:
+    translate(
+      2px,
+      -2px
+    );
+
+  background: #fff;
+
+  color: #000;
+
+  border-color: #fff;
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+========================================================= */
+
+.portfolio__nav {
+  position: absolute;
+
+  top: 43%;
+
+  z-index: 20;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 35px;
+  height: 35px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.14
+    );
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.68
+    );
+
+  color: #fff;
+
+  cursor: pointer;
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  transform:
+    translateY(-50%);
+
+  transition:
+    transform
+    0.3s
+    ease,
+
+    background
+    0.3s
+    ease,
+
+    border-color
+    0.3s
+    ease;
+}
+
+
+.portfolio__nav:hover {
+  transform:
+    translateY(-50%)
+    scale(1.07);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.26
+    );
+}
+
+
+.portfolio__nav--prev {
+  left: -4px;
+}
+
+
+.portfolio__nav--next {
+  right: -4px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.portfolio__progress-wrap {
+  display: grid;
+
+  grid-template-columns:
+    22px
+    minmax(
+      160px,
+      430px
+    )
+    22px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  width: 100%;
+
+  margin:
+    clamp(
+      24px,
+      3vw,
+      38px
+    )
+    auto
+    0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.36
+    );
+
+  font-size: 5.5px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+
+  text-align: center;
+}
+
+
+.portfolio__progress-wrap
+> span:first-child {
+  text-align: right;
+}
+
+
+.portfolio__progress-wrap
+> span:last-child {
+  text-align: left;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.portfolio__progress {
+  position: relative;
+
+  width: 100%;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.14
+    );
+}
+
+
+.portfolio__progress-fill {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.45
+      ),
+      #fff
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    left center;
+
+  transition:
+    transform
+    0.1s
+    linear;
+}
+
+
+/* =========================================================
+   VIEW ALL SECTION
+========================================================= */
+
+.portfolio__view-all-wrap {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top:
+    clamp(
+      58px,
+      6vw,
+      90px
+    );
+
+  padding-top:
+    clamp(
+      30px,
+      3.2vw,
+      48px
+    );
+
+  padding-bottom:
+    clamp(
+      10px,
+      1vw,
+      18px
+    );
+}
+
+
+/* =========================================================
+   PREMIUM SEPARATOR
+========================================================= */
+
+.portfolio__view-all-wrap::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width:
+    min(
+      100%,
+      920px
+    );
+
+  height: 1px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        255,
+        255,
+        255,
+        0.08
+      ) 18%,
+      rgba(
+        255,
+        255,
+        255,
+        0.24
+      ) 50%,
+      rgba(
+        255,
+        255,
+        255,
+        0.08
+      ) 82%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   CENTER DETAIL
+========================================================= */
+
+.portfolio__view-all-wrap::after {
+  content: "";
+
+  position: absolute;
+
+  top: -2px;
+  left: 50%;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  transform:
+    translateX(-50%);
+
+  background: #fff;
+
+  box-shadow:
+    0
+    0
+    12px
+    rgba(
+      255,
+      255,
+      255,
+      0.45
+    );
+}
+
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+.portfolio__view-all {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  min-width:
+    clamp(
+      220px,
+      20vw,
+      285px
+    );
+
+  min-height:
+    clamp(
+      54px,
+      4.5vw,
+      66px
+    );
+
+  padding:
+    0
+    clamp(
+      25px,
+      3vw,
+      40px
+    );
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.82
+    );
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff 0%,
+      #f1f1f1 100%
+    );
+
+  color: #000;
+
+  text-decoration: none;
+
+  font-size:
+    clamp(
+      10px,
+      0.9vw,
+      13px
+    );
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  box-shadow:
+    0
+    14px
+    45px
+    rgba(
+      0,
+      0,
+      0,
+      0.38
+    ),
+
+    0
+    0
+    0
+    1px
+    rgba(
+      255,
+      255,
+      255,
+      0.04
+    );
+
+  transition:
+    transform
+    0.45s
+    cubic-bezier(
+      .16,
+      1,
+      .3,
+      1
+    ),
+
+    box-shadow
+    0.45s
+    ease,
+
+    background
+    0.35s
+    ease,
+
+    color
+    0.35s
+    ease;
+}
+
+
+/* =========================================================
+   BUTTON SHINE
+========================================================= */
+
+.portfolio__view-all::before {
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+  left: -45%;
+
+  width: 28%;
+  height: 300%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        0,
+        0,
+        0,
+        0.08
+      ),
+      transparent
+    );
+
+  transform:
+    rotate(18deg);
+
+  transition:
+    left
+    0.85s
+    cubic-bezier(
+      .16,
+      1,
+      .3,
+      1
+    );
+}
+
+
+/* =========================================================
+   BUTTON INNER HIGHLIGHT
+========================================================= */
+
+.portfolio__view-all::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 2px;
+
+  border-radius: inherit;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.45
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   VIEW ALL HOVER
+========================================================= */
+
+.portfolio__view-all:hover {
+  transform:
+    translateY(-6px);
+
+  background: #fff;
+
+  box-shadow:
+    0
+    24px
+    60px
+    rgba(
+      0,
+      0,
+      0,
+      0.55
+    ),
+
+    0
+    0
+    40px
+    rgba(
+      255,
+      255,
+      255,
+      0.14
+    );
+}
+
+
+.portfolio__view-all:hover::before {
+  left: 125%;
+}
+
+
+/* =========================================================
+   BUTTON CONTENT
+========================================================= */
+
+.portfolio__view-all
+> span {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.portfolio__view-all
+> span:last-child {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(
+      0,
+      0,
+      0,
+      0.15
+    );
+
+  font-size: 15px;
+
+  transition:
+    transform
+    0.4s
+    cubic-bezier(
+      .16,
+      1,
+      .3,
+      1
+    ),
+
+    background
+    0.3s
+    ease;
+}
+
+
+.portfolio__view-all:hover
+> span:last-child {
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.06
+    );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .portfolio {
+    padding:
+      44px
+      0
+      72px;
+  }
+
+
+  .portfolio__header {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 32px;
+  }
+
+
+  .portfolio__header-side {
+    max-width: 420px;
+  }
+
+
+  .portfolio-project {
+    flex:
+      0 0
+      min(
+        250px,
+        48vw
+      );
+
+    width:
+      min(
+        250px,
+        48vw
+      );
+  }
+
+
+  .portfolio-project__media {
+    border-radius: 15px;
+  }
+
+
+  .portfolio-project__image,
+  .portfolio-project__image-overlay {
+    border-radius: 13px;
+  }
+
+
+  /*
+    Keep entire image visible on tablet.
+  */
+
+  .portfolio-project__image {
+    object-fit: contain;
+    object-position: center center;
+  }
+
+
+  .portfolio__track {
+    gap:
+      clamp(
+        20px,
+        3vw,
+        28px
+      );
+  }
+
+
+  .portfolio__progress-wrap {
+    grid-template-columns:
+      20px
+      minmax(
+        140px,
+        360px
+      )
+      20px;
+
+    gap: 10px;
+
+    margin-top: 24px;
+  }
+
+
+  .portfolio__view-all-wrap {
+    margin-top: 60px;
+  }
+
+
+  .portfolio__view-all {
+    min-width: 230px;
+
+    min-height: 56px;
+
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+  .portfolio {
+    padding:
+      34px
+      0
+      60px;
+  }
+
+
+  .portfolio__container {
+    padding:
+      0
+      12px;
+  }
+
+
+  .portfolio__header {
+    gap: 14px;
+
+    margin-bottom: 26px;
+  }
+
+
+  .portfolio__heading {
+    column-gap: 7px;
+  }
+
+
+  .portfolio__heading-word {
+    font-size:
+      clamp(
+        40px,
+        12.4vw,
+        55px
+      );
+  }
+
+
+  .portfolio__intro {
+    max-width: 37ch;
+
+    font-size: 9px;
+  }
+
+
+  .portfolio__explore {
+    margin-top: 12px;
+  }
+
+
+  .portfolio__explore-label {
+    font-size: 5.5px;
+  }
+
+
+  .portfolio__explore-arrow {
+    font-size: 15px;
+  }
+
+
+  /* =======================================================
+     PROJECT
+  ======================================================= */
+
+  .portfolio-project {
+    flex:
+      0 0
+      min(
+        250px,
+        76vw
+      );
+
+    width:
+      min(
+        250px,
+        76vw
+      );
+  }
+
+
+  /* =======================================================
+     IMAGE BOX
+  ======================================================= */
+
+  .portfolio-project__media {
+    aspect-ratio: 1 / 1;
+
+    border-radius: 14px;
+
+    border:
+      1px solid
+      rgba(
+        255,
+        255,
+        255,
+        0.20
+      );
+
+    box-shadow:
+
+      0
+      13px
+      32px
+      rgba(
+        0,
+        0,
+        0,
+        0.46
+      ),
+
+      inset
+      0
+      1px
+      0
+      rgba(
+        255,
+        255,
+        255,
+        0.09
+      );
+  }
+
+
+  /*
+    IMPORTANT MOBILE FIX
+
+    Complete image remains visible.
+  */
+
+  .portfolio-project__image {
+    object-fit: contain;
+
+    object-position: center center;
+
+    border-radius: 12px;
+
+    transform: scale(1);
+  }
+
+
+  .portfolio-project__image-overlay {
+    border-radius: 12px;
+  }
+
+
+  .portfolio-project__media::before {
+    inset: 4px;
+
+    border-radius: 10px;
+  }
+
+
+  .portfolio-project__number {
+    left: 8px;
+
+    top: 8px;
+  }
+
+
+  /* =======================================================
+     TRACK
+  ======================================================= */
+
+  .portfolio__track {
+    gap: 20px;
+
+    padding:
+      5px
+      10px
+      6px;
+
+    margin:
+      0
+      -10px;
+
+    scroll-snap-type:
+      x mandatory;
+
+    -webkit-overflow-scrolling:
+      touch;
+  }
+
+
+  /* =======================================================
+     FOOTER
+  ======================================================= */
+
+  .portfolio-project__footer {
+    padding-top: 10px;
+  }
+
+
+  .portfolio-project__title {
+    max-width: 145px;
+
+    font-size:
+      clamp(
+        11px,
+        3.7vw,
+        13px
+      );
+  }
+
+
+  .portfolio-project__arrow {
+    width: 23px;
+
+    height: 23px;
+  }
+
+
+  /* =======================================================
+     NAVIGATION
+  ======================================================= */
+
+  .portfolio__nav {
+    display: none;
+  }
+
+
+  /* =======================================================
+     PROGRESS
+  ======================================================= */
+
+  .portfolio__progress-wrap {
+    grid-template-columns:
+      18px
+      minmax(
+        120px,
+        260px
+      )
+      18px;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    font-size: 5px;
+  }
+
+
+  /* =======================================================
+     VIEW ALL
+  ======================================================= */
+
+  .portfolio__view-all-wrap {
+    margin-top: 46px;
+
+    padding-top: 25px;
+
+    padding-bottom: 8px;
+  }
+
+
+  .portfolio__view-all-wrap::before {
+    width: 92%;
+  }
+
+
+  .portfolio__view-all {
+    min-width:
+      min(
+        230px,
+        78vw
+      );
+
+    min-height: 54px;
+
+    padding:
+      0
+      24px;
+
+    gap: 13px;
+
+    font-size: 9px;
+  }
+
+
+  .portfolio__view-all
+  > span:last-child {
+    width: 24px;
+
+    height: 24px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .portfolio {
+    padding:
+      30px
+      0
+      52px;
+  }
+
+
+  .portfolio__container {
+    padding:
+      0
+      10px;
+  }
+
+
+  .portfolio__heading-word {
+    font-size:
+      clamp(
+        37px,
+        11.8vw,
+        48px
+      );
+  }
+
+
+  .portfolio-project {
+    flex:
+      0 0
+      205px;
+
+    width: 205px;
+  }
+
+
+  .portfolio-project__media {
+    border-radius: 13px;
+
+    border-color:
+      rgba(
+        255,
+        255,
+        255,
+        0.21
+      );
+  }
+
+
+  /*
+    Complete image on very small screens.
+  */
+
+  .portfolio-project__image {
+    object-fit: contain;
+
+    object-position: center center;
+
+    border-radius: 11px;
+  }
+
+
+  .portfolio-project__image-overlay {
+    border-radius: 11px;
+  }
+
+
+  .portfolio-project__media::before {
+    inset: 3px;
+
+    border-radius: 9px;
+  }
+
+
+  .portfolio__track {
+    gap: 18px;
+
+    padding-bottom: 5px;
+  }
+
+
+  .portfolio__progress-wrap {
+    grid-template-columns:
+      17px
+      minmax(
+        100px,
+        220px
+      )
+      17px;
+
+    margin-top: 18px;
+  }
+
+
+  .portfolio__view-all-wrap {
+    margin-top: 42px;
+
+    padding-top: 22px;
+  }
+
+
+  .portfolio__view-all {
+    min-width:
+      min(
+        220px,
+        82vw
+      );
+
+    min-height: 50px;
+
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .portfolio-project {
+    flex-basis: 300px;
+
+    width: 300px;
+  }
+
+
+  .portfolio-project__media {
+    border-radius: 18px;
+  }
+
+
+  .portfolio-project__image {
+    object-fit: contain;
+
+    object-position: center center;
+
+    border-radius: 16px;
+  }
+
+
+  .portfolio-project__image-overlay {
+    border-radius: 16px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / FOCUS
+========================================================= */
+
+.portfolio-project:focus-visible {
+  outline: 2px solid #fff;
+
+  outline-offset: 5px;
+
+  border-radius: 18px;
+}
+
+
+.portfolio__view-all:focus-visible {
+  outline: 2px solid #fff;
+
+  outline-offset: 5px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .portfolio-project__media,
+  .portfolio-project__image,
+  .portfolio-project__arrow,
+  .portfolio__view-all,
+  .portfolio__view-all::before {
+    transition: none !important;
+  }
+
+
+  .portfolio-project:hover
+  .portfolio-project__media {
+    transform: none;
+  }
+
+
+  .portfolio-project:hover
+  .portfolio-project__image {
+    transform: none;
+
+    filter: none;
+  }
+
+
+  .portfolio__view-all:hover {
+    transform: none;
+  }
+
+
+  .portfolio__track {
+    scroll-behavior: auto;
+  }
+}

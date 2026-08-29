@@ -1,0 +1,636 @@
+/* =========================================================
+   GROWTH CTA
+   PREMIUM DARK GRID DESIGN
+   ========================================================= */
+
+.growth-cta__wrapper {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  padding-top: 8px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  will-change: transform;
+}
+
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
+.growth-cta__panel {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: min(96vw, 1500px);
+
+  min-height: calc(100vh - 8px);
+
+  margin: 0 auto;
+
+  padding:
+    clamp(60px, 7vw, 90px)
+    clamp(24px, 6vw, 80px)
+    clamp(55px, 6vw, 75px);
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-bottom: 0;
+
+  border-radius: 30px 30px 0 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(255, 255, 255, 0.035),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 55%,
+      rgba(18, 124, 193, 0.055),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      #080808 0%,
+      #030303 65%,
+      #000000 100%
+    );
+
+  box-shadow:
+    0 -30px 100px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================================================
+   PREMIUM GRID
+   ========================================================= */
+
+.growth-cta__panel::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    70px 70px;
+
+  mask-image:
+    radial-gradient(
+      ellipse 75% 75% at 50% 50%,
+      black 15%,
+      rgba(0, 0, 0, 0.75) 50%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse 75% 75% at 50% 50%,
+      black 15%,
+      rgba(0, 0, 0, 0.75) 50%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   GRID BLUE ATMOSPHERE
+   ========================================================= */
+
+.growth-cta__panel::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(18, 124, 193, 0.025) 50%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 45%,
+      transparent 25%,
+      rgba(0, 0, 0, 0.45) 75%,
+      #000000 100%
+    );
+}
+
+
+/* =========================================================
+   GRID CORNER FADES
+   ========================================================= */
+
+.growth-cta__panel {
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   TOP BORDER LIGHT
+   ========================================================= */
+
+.growth-cta__panel > .growth-cta__background-glow::before {
+  content: '';
+
+  position: absolute;
+
+  top: -1px;
+  left: 50%;
+
+  width: 55%;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(18, 124, 193, 0.65),
+      rgba(255, 255, 255, 0.55),
+      rgba(18, 124, 193, 0.65),
+      transparent
+    );
+
+  box-shadow:
+    0 0 18px rgba(18, 124, 193, 0.15);
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+   ========================================================= */
+
+.growth-cta__background-glow {
+  position: absolute;
+
+  top: 47%;
+  left: 50%;
+
+  width: 850px;
+  height: 550px;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(18, 124, 193, 0.08),
+      transparent 58%
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.025),
+      transparent 65%
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   WAVES
+   ========================================================= */
+
+.growth-cta__waves {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.growth-cta__waves svg {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 112%;
+  height: 100%;
+
+  transform: translate(-50%, -50%);
+}
+
+
+.growth-cta__wave {
+  fill: none;
+
+  stroke-linecap: round;
+
+  vector-effect: non-scaling-stroke;
+
+  will-change: transform;
+}
+
+
+.growth-cta__wave--one {
+  stroke:
+    rgba(255, 255, 255, 0.08);
+
+  stroke-width: 0.7;
+}
+
+
+.growth-cta__wave--two {
+  stroke:
+    rgba(255, 255, 255, 0.14);
+
+  stroke-width: 0.85;
+}
+
+
+.growth-cta__wave--three {
+  stroke:
+    rgba(18, 124, 193, 0.32);
+
+  stroke-width: 1.05;
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(18, 124, 193, 0.14)
+    );
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.growth-cta__content {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: min(100%, 1000px);
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.growth-cta__eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom:
+    clamp(20px, 2.2vw, 30px);
+
+  padding:
+    7px 14px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 999px;
+
+  background:
+    rgba(0, 0, 0, 0.5);
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 0 25px
+    rgba(18, 124, 193, 0.05);
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.growth-cta__heading {
+  margin: 0;
+
+  max-width: 900px;
+
+  color: #ffffff;
+
+  font-family:
+    'Ethnocentric',
+    'Space Grotesk',
+    'Inter',
+    system-ui,
+    sans-serif;
+
+  font-size:
+    clamp(48px, 6vw, 88px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.025em;
+
+  text-shadow:
+    0 0 40px
+    rgba(255, 255, 255, 0.035),
+    0 0 80px
+    rgba(18, 124, 193, 0.06);
+}
+
+
+/* =========================================================
+   COPY
+   ========================================================= */
+
+.growth-cta__copy {
+  width: min(100%, 590px);
+
+  margin:
+    clamp(24px, 2.6vw, 34px)
+    auto 0;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size:
+    clamp(14px, 1.15vw, 17px);
+
+  line-height: 1.7;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.growth-cta__button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  min-height: 56px;
+
+  margin-top:
+    clamp(28px, 3vw, 38px);
+
+  padding:
+    0 28px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.8);
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  color: #000000;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.growth-cta__button svg {
+  width: 17px;
+  height: 17px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 2;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+.growth-cta__button:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 18px 45px
+    rgba(255, 255, 255, 0.1),
+    0 0 30px
+    rgba(18, 124, 193, 0.12);
+}
+
+
+.growth-cta__button:hover svg {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .growth-cta__wrapper {
+    padding-top: 6px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+
+  .growth-cta__panel {
+    width:
+      calc(100% - 12px);
+
+    min-height:
+      calc(100svh - 6px);
+
+    padding:
+      60px 18px 50px;
+
+    border-radius:
+      22px 22px 0 0;
+  }
+
+
+  .growth-cta__panel::before {
+    background-size:
+      45px 45px;
+
+    mask-image:
+      radial-gradient(
+        ellipse 100% 70% at 50% 50%,
+        black,
+        transparent 90%
+      );
+
+    -webkit-mask-image:
+      radial-gradient(
+        ellipse 100% 70% at 50% 50%,
+        black,
+        transparent 90%
+      );
+  }
+
+
+  .growth-cta__panel::after {
+    background:
+      radial-gradient(
+        ellipse at 50% 45%,
+        transparent 20%,
+        rgba(0, 0, 0, 0.5) 75%,
+        #000000 100%
+      );
+  }
+
+
+  .growth-cta__heading {
+    font-size:
+      clamp(42px, 12vw, 60px);
+
+    line-height: 1.02;
+  }
+
+
+  .growth-cta__eyebrow {
+    margin-bottom: 20px;
+
+    padding:
+      7px 11px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.18em;
+  }
+
+
+  .growth-cta__copy {
+    width: 90%;
+
+    margin-top: 24px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  .growth-cta__button {
+    min-height: 54px;
+
+    margin-top: 28px;
+
+    padding:
+      0 23px;
+
+    border-radius: 11px;
+  }
+
+
+  .growth-cta__waves svg {
+    width: 175%;
+  }
+
+
+  .growth-cta__background-glow {
+    width: 650px;
+    height: 480px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .growth-cta__panel {
+    padding-top: 52px;
+    padding-bottom: 42px;
+  }
+
+
+  .growth-cta__heading {
+    font-size:
+      clamp(38px, 11vw, 52px);
+  }
+
+
+  .growth-cta__copy {
+    width: 94%;
+  }
+}

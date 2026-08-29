@@ -1,0 +1,2050 @@
+.nova-services-journey {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  min-height: 100svh;
+
+  background: #000;
+
+  color: #fff;
+
+  overflow: visible;
+
+  isolation: isolate;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.nova-services-journey::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background: #000;
+}
+
+
+.nova-services-journey::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 40;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.22) 5%,
+      transparent 10%,
+      transparent 90%,
+      rgba(0, 0, 0, 0.22) 95%,
+      rgba(0, 0, 0, 0.88) 100%
+    );
+}
+
+
+/* =====================================================
+  PINNED VIEWPORT
+===================================================== */
+
+.nova-services-journey__viewport {
+  position: relative;
+
+  top: auto;
+
+  width: 100%;
+
+  height: 100vh;
+
+  height: 100svh;
+
+  overflow: hidden;
+
+  background: #000;
+
+  isolation: isolate;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.nova-services-journey__grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 68px 68px;
+
+  opacity: 0.82;
+}
+
+
+.nova-services-journey__grid::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.017) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.017) 1px,
+      transparent 1px
+    );
+
+  background-size: 17px 17px;
+
+  opacity: 0.55;
+}
+
+
+.nova-services-journey__grid-glow {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 52%,
+      rgba(255, 255, 255, 0.026),
+      transparent 58%
+    );
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.nova-services-journey__header {
+  position: absolute;
+
+  top: clamp(24px, 3.5vh, 42px);
+
+  left: 50%;
+
+  z-index: 35;
+
+  width:
+    min(
+      760px,
+      calc(100% - 30px)
+    );
+
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+
+.nova-services-journey__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.4em;
+
+  text-transform: uppercase;
+}
+
+
+.nova-services-journey__eyebrow::before,
+.nova-services-journey__eyebrow::after {
+  content: '';
+
+  width: 34px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5)
+    );
+}
+
+
+.nova-services-journey__eyebrow::after {
+  transform: scaleX(-1);
+}
+
+
+.nova-services-journey__heading {
+  margin: 8px 0 0;
+
+  color: #fff;
+
+  font-size:
+    clamp(
+      40px,
+      4.8vw,
+      70px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+}
+
+
+.nova-services-journey__intro {
+  max-width: 510px;
+
+  margin: 12px auto 0;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size:
+    clamp(
+      10px,
+      0.76vw,
+      12px
+    );
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   WORLD
+===================================================== */
+
+.nova-services-journey__world {
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  z-index: 5;
+
+  width: 5500px;
+
+  height: 100%;
+
+  transform:
+    translate3d(
+      0,
+      0,
+      0
+    );
+
+  will-change: transform;
+
+  backface-visibility: hidden;
+}
+
+
+/* =====================================================
+   GRAPH
+===================================================== */
+
+.nova-services-journey__graph {
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  z-index: 4;
+
+  width: 5500px;
+
+  height: 100%;
+
+  overflow: visible;
+
+  pointer-events: none;
+}
+
+
+.nova-services-journey__graph-shadow {
+  fill: none;
+
+  stroke:
+    rgba(
+      0,
+      0,
+      0,
+      0.82
+    );
+
+  stroke-width: 18;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  filter:
+    drop-shadow(
+      0
+      7px
+      8px
+      rgba(0, 0, 0, 0.85)
+    );
+}
+
+
+.nova-services-journey__graph-base {
+  fill: none;
+
+  stroke: #303030;
+
+  stroke-width: 12;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+.nova-services-journey__graph-main {
+  fill: none;
+
+  stroke:
+    url(
+      #nova-service-metal
+    );
+
+  stroke-width: 8;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  filter:
+    drop-shadow(
+      0
+      3px
+      5px
+      rgba(0, 0, 0, 0.75)
+    );
+}
+
+
+.nova-services-journey__graph-highlight {
+  fill: none;
+
+  stroke:
+    rgba(
+      255,
+      255,
+      255,
+      0.38
+    );
+
+  stroke-width: 0.9;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+.nova-services-journey__graph-travelling-light {
+  fill: none;
+
+  stroke:
+    url(
+      #nova-service-running-light
+    );
+
+  stroke-width: 3;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  filter:
+    url(
+      #nova-service-running-glow
+    );
+
+  pointer-events: none;
+
+  will-change: stroke-dashoffset;
+}
+
+
+/* =====================================================
+   SERVICE POSITION
+===================================================== */
+
+.nova-services-journey__service {
+  position: absolute;
+
+  z-index: 12;
+
+  left: var(--service-x);
+
+  top: var(--service-y);
+
+  width: 1px;
+
+  height: 1px;
+}
+
+
+/* =====================================================
+   NODE
+===================================================== */
+
+.nova-services-journey__node {
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  z-index: 20;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 18px;
+
+  height: 18px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.8);
+
+  background:
+    radial-gradient(
+      circle at 34% 28%,
+      #fff 0%,
+      #e5e5e5 18%,
+      #8d8d8d 38%,
+      #373737 62%,
+      #a8a8a8 82%,
+      #333 100%
+    );
+
+  box-shadow:
+    inset
+    1px
+    1px
+    2px
+    rgba(255, 255, 255, 0.7),
+
+    inset
+    -2px
+    -3px
+    4px
+    rgba(0, 0, 0, 0.8),
+
+    0
+    5px
+    8px
+    rgba(0, 0, 0, 0.8),
+
+    0
+    0
+    9px
+    rgba(255, 255, 255, 0.2);
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  transform-origin: center;
+}
+
+
+.nova-services-journey__node::before {
+  content: '';
+
+  position: absolute;
+
+  inset: -6px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+}
+
+
+.nova-services-journey__node::after {
+  content: '';
+
+  position: absolute;
+
+  inset: -12px;
+
+  border-radius: 50%;
+
+  border:
+    1px dashed
+    rgba(255, 255, 255, 0.08);
+
+  animation:
+    nova-services-spin
+    15s
+    linear
+    infinite;
+}
+
+
+.nova-services-journey__node-inner {
+  width: 4px;
+
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0
+    0
+    9px
+    rgba(255, 255, 255, 0.9);
+}
+
+
+/* =====================================================
+   CONNECTOR
+
+   Shortened so cards stay closer to graph.
+===================================================== */
+
+.nova-services-journey__connector {
+  position: absolute;
+
+  left: 0;
+
+  z-index: 16;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.08)
+    );
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/*
+   TOP connector
+*/
+
+.nova-services-journey__service--top
+.nova-services-journey__connector {
+  bottom: 12px;
+
+  height: 54px;
+
+  transform-origin:
+    bottom center;
+}
+
+
+/*
+   BOTTOM connector
+*/
+
+.nova-services-journey__service--bottom
+.nova-services-journey__connector {
+  top: 12px;
+
+  height: 48px;
+
+  transform-origin:
+    top center;
+}
+
+
+.nova-services-journey__connector::after {
+  content: '';
+
+  position: absolute;
+
+  left: -2px;
+
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0
+    0
+    9px
+    rgba(255, 255, 255, 0.5);
+}
+
+
+.nova-services-journey__service--top
+.nova-services-journey__connector::after {
+  top: 0;
+}
+
+
+.nova-services-journey__service--bottom
+.nova-services-journey__connector::after {
+  bottom: 0;
+}
+
+
+/* =====================================================
+   GLASS SERVICE CARD
+===================================================== */
+
+.nova-services-journey__content {
+  position: absolute;
+
+  z-index: 24;
+
+  /*
+   * IDENTICAL SIZE FOR ALL CARDS
+   */
+
+  width: 440px;
+
+  height: 205px;
+
+  box-sizing: border-box;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.13);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.082),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  backdrop-filter:
+    blur(18px);
+
+  box-shadow:
+    inset
+    0
+    1px
+    0
+    rgba(255, 255, 255, 0.11),
+
+    inset
+    0
+    -1px
+    0
+    rgba(255, 255, 255, 0.035),
+
+    0
+    18px
+    50px
+    rgba(0, 0, 0, 0.42);
+
+  pointer-events: auto;
+
+  cursor: default;
+
+  will-change:
+    transform,
+    opacity;
+
+  transition:
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =====================================================
+   IMPORTANT POSITION FIX
+
+   TOP CARDS:
+   moved downward away from main heading.
+
+   BOTTOM CARDS:
+   moved upward closer to graph so full box remains
+   visible inside viewport.
+===================================================== */
+
+.nova-services-journey__service--top
+.nova-services-journey__content {
+  left: -8px;
+
+  bottom: 70px;
+}
+
+
+.nova-services-journey__service--bottom
+.nova-services-journey__content {
+  left: -8px;
+
+  top: 58px;
+}
+
+
+/* =====================================================
+   GLASS SHINE
+===================================================== */
+
+.nova-services-journey__content::before {
+  content: '';
+
+  position: absolute;
+
+  left: 18px;
+
+  right: 18px;
+
+  top: 0;
+
+  z-index: 2;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+
+  opacity: 0.65;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   SOFT INTERNAL GLOW
+===================================================== */
+
+.nova-services-journey__content::after {
+  content: '';
+
+  position: absolute;
+
+  width: 160px;
+
+  height: 160px;
+
+  right: -75px;
+
+  bottom: -90px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.09) 0%,
+      rgba(255, 255, 255, 0.025) 45%,
+      transparent 72%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   CARD GRID
+===================================================== */
+
+.nova-services-journey__card-grid {
+  position: absolute;
+
+  right: -1px;
+
+  top: -1px;
+
+  width: 125px;
+
+  height: 92px;
+
+  z-index: 0;
+
+  opacity: 0.42;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    17px
+    17px;
+
+  mask-image:
+    linear-gradient(
+      225deg,
+      black,
+      transparent 82%
+    );
+}
+
+
+/* =====================================================
+   CARD ORBIT
+===================================================== */
+
+.nova-services-journey__card-orbit {
+  position: absolute;
+
+  right: 24px;
+
+  top: 23px;
+
+  width: 42px;
+
+  height: 42px;
+
+  z-index: 1;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  pointer-events: none;
+}
+
+
+.nova-services-journey__card-orbit::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 7px;
+
+  border-radius: 50%;
+
+  border:
+    1px dashed
+    rgba(255, 255, 255, 0.11);
+}
+
+
+.nova-services-journey__card-orbit::after {
+  content: '';
+
+  position: absolute;
+
+  left: 50%;
+
+  top: -3px;
+
+  width: 5px;
+
+  height: 5px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.62);
+
+  box-shadow:
+    0
+    0
+    8px
+    rgba(255, 255, 255, 0.3);
+}
+
+
+/* =====================================================
+   CARD DOT
+===================================================== */
+
+.nova-services-journey__card-dot {
+  position: absolute;
+
+  right: 22px;
+
+  bottom: 21px;
+
+  width: 4px;
+
+  height: 4px;
+
+  z-index: 2;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  box-shadow:
+    0
+    0
+    9px
+    rgba(255, 255, 255, 0.3);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.nova-services-journey__content-inner {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+
+  height: 100%;
+
+  box-sizing: border-box;
+
+  padding:
+    22px
+    24px
+    22px;
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.nova-services-journey__number {
+  flex: 0 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  height: 15px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 9px;
+
+  font-weight: 650;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* =====================================================
+   TEXT BLOCK
+===================================================== */
+
+.nova-services-journey__text-block {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  flex: 1;
+
+  width:
+    calc(
+      100% - 18px
+    );
+
+  min-height: 0;
+
+  padding-top: 9px;
+
+  padding-bottom: 8px;
+}
+
+
+/* =====================================================
+   SERVICE TITLE
+===================================================== */
+
+.nova-services-journey__title {
+  display: flex;
+
+  align-items: center;
+
+  margin: 0;
+
+  min-height: 74px;
+
+  max-width: 370px;
+
+  color: #fff;
+
+  font-size:
+    clamp(
+      28px,
+      2.25vw,
+      39px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  letter-spacing:
+    -0.045em;
+
+  text-transform:
+    uppercase;
+
+  text-shadow:
+    0
+    0
+    20px
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.nova-services-journey__description {
+  margin:
+    9px
+    0
+    0;
+
+  min-height: 18px;
+
+  max-width: 385px;
+
+  overflow: hidden;
+
+  color:
+    rgba(255, 255, 255, 0.74);
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   BOTTOM CARD LINE
+===================================================== */
+
+.nova-services-journey__card-line {
+  position: relative;
+
+  display: block;
+
+  flex: 0 0 auto;
+
+  width: 100%;
+
+  height: 1px;
+
+  margin-top: auto;
+
+  overflow: visible;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.36),
+      rgba(255, 255, 255, 0.08) 46%,
+      transparent 82%
+    );
+}
+
+
+.nova-services-journey__card-line::before {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+
+  top: 50%;
+
+  width: 5px;
+
+  height: 5px;
+
+  transform:
+    translateY(-50%);
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0
+    0
+    8px
+    rgba(255, 255, 255, 0.38);
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.nova-services-journey__content:hover {
+  border-color:
+    rgba(255, 255, 255, 0.28);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.115),
+      rgba(255, 255, 255, 0.038)
+    );
+
+  box-shadow:
+    inset
+    0
+    1px
+    0
+    rgba(255, 255, 255, 0.18),
+
+    0
+    24px
+    60px
+    rgba(0, 0, 0, 0.5),
+
+    0
+    0
+    34px
+    rgba(255, 255, 255, 0.05);
+}
+
+
+.nova-services-journey__content:hover
+.nova-services-journey__card-orbit {
+  border-color:
+    rgba(255, 255, 255, 0.23);
+}
+
+
+.nova-services-journey__content:hover
+.nova-services-journey__card-grid {
+  opacity: 0.65;
+}
+
+
+.nova-services-journey__content:hover
+.nova-services-journey__card-dot {
+  background: #fff;
+
+  box-shadow:
+    0
+    0
+    13px
+    rgba(255, 255, 255, 0.65);
+}
+
+
+/* =====================================================
+   END
+===================================================== */
+
+.nova-services-journey__end {
+  position: absolute;
+
+  left: 5240px;
+
+  top: 45%;
+
+  z-index: 30;
+
+  width: 1px;
+
+  height: 1px;
+}
+
+
+.nova-services-journey__end-line {
+  position: absolute;
+
+  right: 11px;
+
+  top: 50%;
+
+  width: 110px;
+
+  height: 1px;
+
+  transform:
+    translateY(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.55)
+    );
+}
+
+
+.nova-services-journey__end-ring {
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 34px;
+
+  height: 34px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.24);
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  box-shadow:
+    0
+    0
+    18px
+    rgba(255, 255, 255, 0.1);
+}
+
+
+.nova-services-journey__end-dot {
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 11px;
+
+  height: 11px;
+
+  border-radius: 50%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fff,
+      #ddd 35%,
+      #777 70%,
+      #292929
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0
+    0
+    14px
+    rgba(255, 255, 255, 0.48),
+
+    0
+    0
+    34px
+    rgba(255, 255, 255, 0.14);
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes nova-services-spin {
+
+  to {
+    transform:
+      rotate(
+        360deg
+      );
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .nova-services-journey__content {
+    width: 390px;
+
+    height: 190px;
+  }
+
+
+  .nova-services-journey__content-inner {
+    padding:
+      20px
+      21px
+      19px;
+  }
+
+
+  /*
+   * Keep top cards below heading.
+   */
+
+  .nova-services-journey__service--top
+  .nova-services-journey__content {
+    bottom: 64px;
+  }
+
+
+  /*
+   * Keep bottom card completely inside screen.
+   */
+
+  .nova-services-journey__service--bottom
+  .nova-services-journey__content {
+    top: 52px;
+  }
+
+
+  .nova-services-journey__service--top
+  .nova-services-journey__connector {
+    height: 48px;
+  }
+
+
+  .nova-services-journey__service--bottom
+  .nova-services-journey__connector {
+    height: 42px;
+  }
+
+
+  .nova-services-journey__title {
+    min-height: 64px;
+
+    max-width: 330px;
+
+    font-size: 31px;
+  }
+
+
+  .nova-services-journey__description {
+    max-width: 340px;
+
+    font-size: 9px;
+  }
+
+
+  .nova-services-journey__card-grid {
+    width: 105px;
+
+    height: 82px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 760px) {
+
+  .nova-services-journey__header {
+    top: 20px;
+
+    width:
+      calc(
+        100% - 26px
+      );
+  }
+
+
+  .nova-services-journey__grid {
+    background-size:
+      46px
+      46px;
+  }
+
+
+  .nova-services-journey__grid::before {
+    background-size:
+      11.5px
+      11.5px;
+  }
+
+
+  .nova-services-journey__eyebrow {
+    gap: 9px;
+
+    font-size: 6px;
+
+    letter-spacing:
+      0.3em;
+  }
+
+
+  .nova-services-journey__eyebrow::before,
+  .nova-services-journey__eyebrow::after {
+    width: 22px;
+  }
+
+
+  .nova-services-journey__heading {
+    margin-top: 7px;
+
+    font-size:
+      clamp(
+        32px,
+        11vw,
+        44px
+      );
+  }
+
+
+  .nova-services-journey__intro {
+    max-width: 300px;
+
+    margin-top: 8px;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+  }
+
+
+  /* GRAPH */
+
+  .nova-services-journey__graph-shadow {
+    stroke-width: 14px;
+  }
+
+
+  .nova-services-journey__graph-base {
+    stroke-width: 9px;
+  }
+
+
+  .nova-services-journey__graph-main {
+    stroke-width: 6px;
+  }
+
+
+  .nova-services-journey__graph-highlight {
+    stroke-width: 0.7px;
+  }
+
+
+  .nova-services-journey__graph-travelling-light {
+    stroke-width: 2.2px;
+  }
+
+
+  .nova-services-journey__node {
+    width: 16px;
+
+    height: 16px;
+  }
+
+
+  /*
+   * Same mobile card size.
+   */
+
+  .nova-services-journey__content {
+    width: 305px;
+
+    height: 165px;
+
+    border-radius: 15px;
+
+    -webkit-backdrop-filter:
+      blur(15px);
+
+    backdrop-filter:
+      blur(15px);
+  }
+
+
+  .nova-services-journey__content-inner {
+    padding:
+      17px
+      18px
+      16px;
+  }
+
+
+  /*
+   * TOP CARD
+   * Moves downward.
+   */
+
+  .nova-services-journey__service--top
+  .nova-services-journey__content {
+    left: -5px;
+
+    bottom: 54px;
+  }
+
+
+  /*
+   * BOTTOM CARD
+   * Moves upward so entire card is visible.
+   */
+
+  .nova-services-journey__service--bottom
+  .nova-services-journey__content {
+    left: -5px;
+
+    top: 42px;
+  }
+
+
+  .nova-services-journey__service--top
+  .nova-services-journey__connector {
+    height: 40px;
+  }
+
+
+  .nova-services-journey__service--bottom
+  .nova-services-journey__connector {
+    height: 32px;
+  }
+
+
+  .nova-services-journey__number {
+    height: 12px;
+
+    font-size: 7px;
+  }
+
+
+  .nova-services-journey__text-block {
+    width:
+      calc(
+        100% - 5px
+      );
+
+    padding-top: 6px;
+
+    padding-bottom: 5px;
+  }
+
+
+  .nova-services-journey__title {
+    min-height: 49px;
+
+    max-width: 255px;
+
+    font-size:
+      clamp(
+        21px,
+        6.5vw,
+        27px
+      );
+
+    line-height: 0.96;
+  }
+
+
+  .nova-services-journey__description {
+    margin-top: 6px;
+
+    min-height: 14px;
+
+    max-width: 260px;
+
+    font-size: 7px;
+
+    line-height: 1.4;
+
+    white-space: nowrap;
+  }
+
+
+  .nova-services-journey__card-grid {
+    width: 78px;
+
+    height: 67px;
+
+    background-size:
+      13px
+      13px;
+  }
+
+
+  .nova-services-journey__card-orbit {
+    right: 16px;
+
+    top: 16px;
+
+    width: 31px;
+
+    height: 31px;
+  }
+
+
+  .nova-services-journey__card-dot {
+    right: 17px;
+
+    bottom: 15px;
+  }
+
+}
+
+
+/* =====================================================
+   SHORT LAPTOP / SMALL HEIGHT SCREEN
+
+   This is especially important for 1366 × 768 and
+   similar laptop displays.
+===================================================== */
+
+@media (max-height: 760px) and (min-width: 761px) {
+
+  .nova-services-journey__header {
+    top: 16px;
+  }
+
+
+  .nova-services-journey__heading {
+    font-size:
+      clamp(
+        34px,
+        4vw,
+        52px
+      );
+  }
+
+
+  .nova-services-journey__intro {
+    margin-top: 6px;
+
+    font-size: 9px;
+  }
+
+
+  /*
+   * Slightly smaller cards ONLY for low-height screens.
+   * All six remain identical.
+   */
+
+  .nova-services-journey__content {
+    width: 410px;
+
+    height: 174px;
+  }
+
+
+  .nova-services-journey__content-inner {
+    padding:
+      16px
+      20px
+      15px;
+  }
+
+
+  /*
+   * Creates safe gap from main WHAT WE DO heading.
+   */
+
+  .nova-services-journey__service--top
+  .nova-services-journey__content {
+    bottom: 52px;
+  }
+
+
+  /*
+   * Prevents bottom container clipping.
+   */
+
+  .nova-services-journey__service--bottom
+  .nova-services-journey__content {
+    top: 42px;
+  }
+
+
+  .nova-services-journey__service--top
+  .nova-services-journey__connector {
+    height: 38px;
+  }
+
+
+  .nova-services-journey__service--bottom
+  .nova-services-journey__connector {
+    height: 32px;
+  }
+
+
+  .nova-services-journey__number {
+    height: 12px;
+
+    font-size: 8px;
+  }
+
+
+  .nova-services-journey__text-block {
+    padding-top: 5px;
+
+    padding-bottom: 4px;
+  }
+
+
+  .nova-services-journey__title {
+    min-height: 55px;
+
+    font-size:
+      clamp(
+        25px,
+        2vw,
+        33px
+      );
+  }
+
+
+  .nova-services-journey__description {
+    margin-top: 5px;
+
+    font-size: 8.5px;
+  }
+
+
+  .nova-services-journey__card-line {
+    margin-top: 2px;
+  }
+
+}
+
+
+/* =====================================================
+   EXTRA SHORT SCREENS
+===================================================== */
+
+@media (max-height: 650px) and (min-width: 761px) {
+
+  .nova-services-journey__header {
+    top: 12px;
+  }
+
+
+  .nova-services-journey__heading {
+    font-size: 40px;
+  }
+
+
+  .nova-services-journey__intro {
+    max-width: 450px;
+
+    font-size: 8px;
+  }
+
+
+  .nova-services-journey__content {
+    width: 390px;
+
+    height: 150px;
+  }
+
+
+  .nova-services-journey__content-inner {
+    padding:
+      13px
+      18px
+      12px;
+  }
+
+
+  .nova-services-journey__service--top
+  .nova-services-journey__content {
+    bottom: 40px;
+  }
+
+
+  .nova-services-journey__service--bottom
+  .nova-services-journey__content {
+    top: 34px;
+  }
+
+
+  .nova-services-journey__service--top
+  .nova-services-journey__connector {
+    height: 28px;
+  }
+
+
+  .nova-services-journey__service--bottom
+  .nova-services-journey__connector {
+    height: 24px;
+  }
+
+
+  .nova-services-journey__title {
+    min-height: 46px;
+
+    font-size: 27px;
+  }
+
+
+  .nova-services-journey__description {
+    margin-top: 4px;
+
+    font-size: 8px;
+  }
+
+
+  .nova-services-journey__card-orbit {
+    width: 32px;
+
+    height: 32px;
+
+    right: 18px;
+
+    top: 17px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nova-services-journey {
+    height: auto !important;
+
+    min-height: 100vh;
+
+    overflow: visible;
+
+    padding:
+      150px
+      20px
+      80px;
+  }
+
+
+  .nova-services-journey__viewport {
+    position: relative;
+
+    top: auto;
+
+    height: auto;
+
+    overflow: visible;
+  }
+
+
+  .nova-services-journey__header {
+    position: relative;
+
+    top: auto;
+
+    left: auto;
+
+    transform: none;
+
+    margin:
+      0
+      auto
+      70px;
+  }
+
+
+  .nova-services-journey__world {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    transform:
+      none !important;
+  }
+
+
+  .nova-services-journey__graph,
+  .nova-services-journey__end {
+    display: none;
+  }
+
+
+  .nova-services-journey__service {
+    position: relative;
+
+    left:
+      auto !important;
+
+    top:
+      auto !important;
+
+    width:
+      min(
+        600px,
+        100%
+      );
+
+    height: auto;
+
+    margin:
+      0
+      auto
+      70px;
+  }
+
+
+  .nova-services-journey__node,
+  .nova-services-journey__connector {
+    display: none;
+  }
+
+
+  .nova-services-journey__content {
+    position: relative;
+
+    left:
+      auto !important;
+
+    top:
+      auto !important;
+
+    bottom:
+      auto !important;
+
+    width:
+      min(
+        440px,
+        100%
+      );
+
+    height: 205px;
+
+    opacity:
+      1 !important;
+
+    visibility:
+      visible !important;
+
+    transform:
+      none !important;
+  }
+
+}

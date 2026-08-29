@@ -1,0 +1,127 @@
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 1800;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: auto;
+}
+
+.menu-overlay[aria-hidden='true'] {
+  pointer-events: none;
+}
+
+.menu-overlay__inner {
+  position: relative;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(26px, 4vw, 42px) clamp(24px, 3vw, 55px);
+  pointer-events: auto;
+}
+
+.menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.menu-top__brand {
+  font-size: 0.95rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.menu-top__close {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 3vw, 32px);
+  margin-top: 4rem;
+}
+
+.menu-nav__item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.menu-nav__index,
+.menu-nav__label,
+.menu-nav__desc {
+  display: block;
+}
+
+.menu-nav__index {
+  font-size: clamp(14px, 1.1vw, 16px);
+  letter-spacing: 0.16em;
+  opacity: 0.45;
+  white-space: nowrap;
+}
+
+.menu-nav__label {
+  font-size: clamp(42px, 6vw, 82px);
+  line-height: 0.9;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.menu-nav__desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+.menu-nav__item:hover .menu-nav__label {
+  transform: translateX(12px);
+}
+
+.menu-nav__item:hover .menu-nav__desc,
+.menu-nav__item:hover .menu-nav__index {
+  opacity: 0.85;
+}
+
+.menu-overlay[aria-hidden='true'] {
+  visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .menu-overlay__inner {
+    padding: 20px 18px;
+  }
+
+  .menu-nav {
+    margin-top: 3rem;
+    gap: 18px;
+  }
+
+  .menu-nav__item {
+    grid-template-columns: auto;
+    gap: 8px;
+  }
+
+  .menu-nav__label {
+    font-size: clamp(36px, 12vw, 54px);
+  }
+
+  .menu-nav__desc {
+    font-size: 0.8rem;
+  }
+}
